@@ -44,7 +44,7 @@
   // Read in some external data. When we're done, run the function 'ready'
 
   d3.queue()
-    .defer(d3.csv, 'coordinates-with-all-info.csv')
+    .defer(d3.csv, 'github-friendly-coordinates.csv')
     .defer(d3.csv, 'connection_lines_coordinates.csv')
     .await(ready)
 
