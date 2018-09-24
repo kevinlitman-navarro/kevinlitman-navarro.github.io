@@ -1,0 +1,78 @@
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: #111111;
+  color: #DDDDC9;
+  border-radius: 0px;
+  pointer-events: none;
+  z-index: 111;
+  position: -webkit-sticky;
+  position: sticky;
+
+}
+
+/* 
+  go find a span inside of a thing
+  with the class of d3-tip 
+*/
+.d3-tip span {
+  color: #DDDDC9;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 0px;
+  width: 0%;
+  line-height: 0;
+  color: rgba(0, 0, 0, 0.8);
+  position: -webkit-sticky;
+  position: sticky;
+  pointer-events: none;
+  z-index: 111
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+  content: "\25BC";
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 111
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+  content: "\25C0";
+  margin: -4px 0 0 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50%;
+  left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+  content: "\25B2";
+  margin: 0 0 1px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -8px;
+  left: 0;
+  text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+  content: "\25B6";
+  margin: -4px 0 0 -1px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50%;
+  left: 100%;
+}

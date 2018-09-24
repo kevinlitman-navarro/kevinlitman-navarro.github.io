@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="d3-tip.css">
+    <link rel="stylesheet" href="style/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto Condensed:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
+    <title>What is Philosophy?</title>
+
+    <style>
+
+    #container{
+  position: relative;
+}
+#sections{
+  width: 400px;
+  position: relative;
+  right:200;
+}
+#sections > div{
+  stroke: #DCCCC9;
+  opacity: .2;
+  margin-bottom: 500px;
+  z-index: 60;  
+}
+
+.d3-tip{
+  z-index:3;
+  position: -webkit-sticky;
+  position:sticky;
+}
+
+#sections > div.last-child{
+  margin-bottom: 30px;
+}
+#sections > div.graph-scroll-active{
+  opacity: 1;
+  z-index: 6;
+
+}
+#graph{
+  margin-left: 100px;
+  width: 800px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  float: right;
+  z-index: 0;
+}  
+
+#tooltips{
+  text-align: center;
+  left:90;
+  top:0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+#shrug{
+  text-align: center;
+}
+
+ 
+    </style>
+
+  </head>
+<body class='dark-theme'>
+<br><br><br><br><br>
+
+
+
+<div class='container'>
+  <div class="row justify-content-center"><!-- headline and intro -->
+  
+    <div class="col-lg-10 ">
+      <p class="kicker super-font">Department of Blowing Minds</p>
+      <h1 class="headline super-font">What Is Philosophy? Who Cares?</h1>
+      <p class="credit super-font">BY Kevin Litman-Navarro</p>
+      <p class="date sub-font"></p>
+      <p class="body-text sub-font"> 
+        I studied Philosophy in college. This likely matters little to you: after all, you probably don't know me, and you probably don't know much about philosophy either.
+        <br><br>
+        But if these premises are true, then you and I are quite alike. I, too, possess minimal Kevin-knowledge, despite having been repeatedly advised to &ldquo;know myself.&rdquo; And while I did rack up 36 credits worth of Philosophy courses in undergrad (that's roughly 540 hours spent in lecture, and 540 hours spent skipping lecture), I am no master philosopher. <a href='https://en.wikipedia.org/wiki/Q.E.D.'>Quod erat demonstrandum</a>!
+        <br><br>
+        Here's my problem. After I've told someone that I studied philosophy (usually a friend of a friend who I will never see again), after I've assured them that, despite my preoccupation with the ~big~ questions, we are still very much alike, my now-at-ease interlocuter will invariably lob a ~big~ question back in my direction. 
+      </p>
+      <p class='body-text super-font'>
+        <br><br>
+        AT-EASE INTERLOCUTOR (feigning interest): Philosophy, hmmm, interesting. What's your philosophy? <br><br>
+        ME (feigning surprise): What a surprising question? I guess, if I had to sum up my philosophy, maybe, like, be cool? <br><br>
+        AT-EASE INTERLOCUTOR (playfully or with venom): Wow, looks like we got a chill guy on our hands. <br><br>
+        ME (smug, then lying): Well, I am from Long Beach, California, and I've been known to shred the gnar from time to time. <br><br>
+        <br><br>
+      </p>
+      <p class='body-text super-font'>
+        <br><br>
+        AT-EASE INTERLOCUTOR (feigning interest): Philosophy, hmmm, interesting. Who's your favorite philosopher? <br><br>
+        ME (feigning surprise): What a surprising question? I guess, if I had to pick a favorite philosopher, I would say Ludwig Wittgenstein, who was great, because he was kind of a philosopher, but like, kind of an <font style='font-style:italic'>anti-philosopher</font>, you know? <br><br>
+        AT-EASE INTERLOCUTOR (eyes glazing over): No, not really. What was his philosophy?<br><br>
+        ME (pedantically): Well, I'm not really sure it's fair to say that he had one, because while he sort of pioneered the field of natural language philosophy, he was also a strong critic of philosophy as a discipline, and I'm not sure that he would even say that he has &lsquo;a philosophy.&rsquo;<br><br>
+        AT-EASE INTERLOCUTOR: I'm gonna go get another beer.
+        <br><br>
+      </p>
+      <p class='body-text super-font'>
+        <br><br>
+        AT-EASE INTERLOCUTOR (with genuine interest): Philosophy, hmmm, interesting. What is philosophy, anyway? <br><br>
+        ME (contemplative, like an owl): That's a great question. I think, at bottom, it's the practice of asking questions. <br><br>
+        AT-EASE INTERLOCUTOR (is actually Socrates): So you might say that I'm a practicing philosopher, wouldn't you? <br><br>
+        ME (panicking): Well, I don't think that's what I said. <br><br>
+        SOCRATES: You defined philosophy as &lsquo;the practice of asking questions.&rsquo; And here I am, asking questions. Yes?<br><br>
+        ME (hanging head in shame): Yes. <br><br>
+        SOCRATES: This must mean I am participating in philosophy. And what is a philosopher but one that practices philosophy? <br><br>
+        ME: Sounds right to me. <br><br>
+        SOCRATES: Therefore, I must be a philosopher. Now, tell me, what is justice? <br><br>
+        ME: I'm gonna go get another beer. <br><br>
+        SOCRATES: Very well, I'm off to the Piraeus. <br><br>
+        <br><br>
+      </p>
+      <p class='body-text sub-font'>
+        Socrates never made it to the Piraeus on this particular day. He was executed for asking too many impetulant, annoying questions of the Ancient Greek citizenry. Which is to say, he was a great philosopher! 
+        <br><br> 
+        At least, according to my definition of philosophy. Unfortunately, I don't think my definition is particularly incisive. It's true that asking questions is at the core of philosophy, but it's also essential to journalism, or promoting conspiracy theories. Which brings up an excellent question. What is philosophy, anyway? And who gets to decide?
+        <br><br>
+        According to Google and the Oxford English Dictionary:
+        <br><br><br><br><br><br>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class='row justify-content-center'>
+
+  <image src='style/images/philosophy_definition-01.png'></image>
+
+</div>
+
+  <div class='container'>
+  <div class="row justify-content-center"><!-- headline and intro -->
+  
+    <div class="col-lg-10 ">
+      <p class="body-text sub-font"> 
+      <br><br><br><br><br><br>
+        Here's the thing: while we like to think of dictionaries as authoritative sources on the meaning of words, they are often wrong. When it comes to defining philosophy, I'm not sure that it's even possible to distill the discipline into a brief definition. So, instead of trying to create an alternative definition that captures the entire discipline, I think it's best to trace the countours of philosophy.
+      <br><br><br><br><br><br>
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="row justify-content-center">
+
+  
+    <div id='container' class='container-1'>
+        <div id="graph"><div id='tooltips'></div></div>
+        <div id='sections' class='sub-font body-text'>
+          <div>
+            <h3 class='super-font subhead'>Mapping the Stanford <br>Encyclopedia of Philosophy</h3>
+            The <a href='https://plato.stanford.edu/'>Stanford Encyclopedia of Philosophy</a> (SEP) is a collection of nearly 2,000 articles summarizing a wide range of topics in philosophy. It is the most robust resource for philosophers brushing up on a subject, or looking for a cursory understanding of anything from <a href='https://plato.stanford.edu/entries/artificial-intelligence/'>Artificial Intelligence</a> to (non-brain eating) <a href='https://plato.stanford.edu/entries/zombies/'>Zombies</a>.
+            <br><br>
+            In its entirety, the SEP is the closest thing modern philosophers have to a comprehensive document describing the history of ideas. While not exhaustive, the Encylopedia is very thorough, and can be used to create a picture of the discipline. 
+            <br><br>
+            In the chart to the right, each circle represents an entry in the SEP, and they are clustered according to the content of the entry. Scroll over a circle to see which entry you are looking at.
+          </div>
+
+          <div>
+            For example, here are all the entries that are about Aristotle &mdash; perhaps the most famous philosopher of all time &mdash; clustered in the same general area.
+          </div>
+
+          <div>
+            But the SEP isn't (completely) about old dead dudes. Alongside articles about classical philosophers who lived more than 2,000 years ago, the Enclopedia has a section dedicated to Feminist Studies.
+            <br><br>
+            Topics like <font style='font-style:italic'>Feminist Bioethics</font> are completely over looked by the dictionary definition of philosophy. In fact, the traditional definition overlooks around half of the Encyclopedia.
+          </div>
+
+          <div>
+            <h3 class='super-font subhead'>Bad Words</h3>
+            We can see just how inadequate this definition is by searching for keywords in the abstract of each entry. Each gray circle represents one topic in the Encyclopedia that isn't explicitly about <font style="color:#52BBB7">existence</font>, <font style="color:#D1A72A">knowledge</font>, or <font style="color:#EB5852">reality</font>.
+          </div>
+
+
+          <div>
+            <h3 class='super-font subhead'><font style="color:#52BBB7">Why is there something instead of nothing?</font></h3>
+            There's a way in which anything about anything is about <font style="color:#52BBB7">existence</font>, man. But when philosophers ponder existence (ontology, in academic-speak), they consider very abstract, but particular questions: Why is there something instead of nothing? If you know the answer, send me an email, please.
+          </div>
+
+          <div>
+            In the 20th century, this strain of philosophical inquiry was typified by the Absurdist Albert Camus and the Existentialist John Paul Sartre, whose work is very much about what might be called the problem of human existence.
+          </div>
+
+          <div>
+            <h3 class='super-font subhead'><font style="color:#D1A72A">Who knows?</font></h3>
+            The study of <font style="color:#D1A72A">knowledge</font> (epistemology, in the ivory tower) is important to the overall project of understanding the world, but does it make up a third of the discipline? 
+          </div>
+
+          <div>
+            Key concepts in epistemology include essentially every aspect of cognition. What is a belief? Can anyone really know anything or are the skeptics right? How would we know? 
+            <br><br>
+            If a man believes that there is a barn in a field, because he sees what he percieves as a barn in a field, but what he sees is in fact the facade of a barn, but not a whole barn, placed by some trickster farmer/evil demon in order to fool the man into believing he sees a barn in a field, is the man justified in believing there is a barn in a field, and if there is a second thing that looks like a barn in the field and it actually is a barn in the field, but it's not the thing that the man saw that made him believe that there was a barn in the field, does the man <font style='font-style:italic'>know</font> there is a barn in the field? 
+          </div>
+
+          <div>
+            <h3 class='super-font subhead'><font style="color:#EB5852">What is real?</font></h3>
+            Like epistemology, the study of <font style="color:#EB5852">reality</font> (metaphysics, in hot-boxed dorm rooms) extends to many different areas of philosophy. While metaphysics and ontology are closely related, the former mostly assumes that things already exist and concerns itself with figuring out <font style='font-style:italic'>how things exist</font>. 
+          </div>
+
+          <div>
+            Metaphysics is the stuff of sci-fi fever dreams. Is time travel possible? Does the Uncertainty Principle conflict with Determinism? Is there such a thing as objective reality, or is everything constructed by consciousness? 
+          </div>
+
+          <div>
+            <h3 class='super-font subhead'>But What About Feminist Bioethics?</h3>
+            There is a whole universe of topics missed by the dictionary definition of philosophy, and it's not limited to niche topics like <a href='https://plato.stanford.edu/entries/feminist-bioethics/'><font style='font-style:italic'>Feminist Bioethics</font></a>, <a href='https://plato.stanford.edu/entries/spacetime-theories/'><font style='font-style:italic'>Absolute and Relational Theories of Space and Motion</font></a>, and <a href='https://plato.stanford.edu/entries/reflective-equilibrium/'><font style='font-style:italic'>Reflective Equilibrium</font></a>.
+          </div>
+
+          <div>
+            Even a sufficiently wide interpretation of the study of knowledge, existence, and reality completely misses the entire field of political philsophy. Other major topics of humanistic philosophical inquiry, like the nature of personal identity, are also overlooked.
+          </div>
+
+          <div>
+            <h3 class='super-font subhead'>What is philosophy? ¯\_(ツ)_/¯</h3>
+            Clearly, the dictionary definition of philosophy misses the mark. Likewise, it seems reductive to say that philosophy is the practice of asking questions, or harrassing strangers on the street. 
+            <br><br>
+            Still there must be something that unites the disparate topics in the SEP. By examining the language used in each entry, we can entertain a new definition &mdash; philosophy is about constucting theories of things.
+          </div>
+
+        
+        </div>
+    </div>
+  
+    
+
+
+
+      
+
+    </div>
+  </div>
+
+  <div class='container'>
+  <div class="row justify-content-center"><!-- headline and intro -->
+    <div class="col-lg-10 ">
+    <br><br><br><br><br><br>
+      <p class='super-font subhead'>The next section</p>
+      <p class="body-text sub-font"> 
+        Ipso facto, ergo, therefore, Q.E.D., yadayadayada
+      </p>
+    </div>
+  </div>
+</div>
+  
+
+
+  <br><br>
+
+
+
+  <!-- This is D3, our graphing library -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+<script src="graph-scroll.js"></script>
+<script src="d3-tip.js"></script>
+  <!-- Now we include our actual visualization -->
+<script src="all_seasons_scatter.js"></script>
+  
+
+  <script> 
+
+     var gs = d3.graphScroll()
+      .graph(d3.selectAll('#graph'))
+      .container(d3.select('#container'))
+      .sections(d3.selectAll('#sections > div'))
+      .offset(400)
+      .on('active', function(i){ console.log(i + 'th section active') })
+
+
+  </script>
+ 
+  
+  
+
+
+</div>
+</body>
+</html>
