@@ -12,7 +12,7 @@
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return "<strong class='super-font'>" + d.title + "</strong>" + "<span class='super-font'>" + "<br>" + "&mdash;&mdash;&mdash;&mdash;" + "<br> Peak Chart Position: " + d.peak_rank + "<br>" + "&mdash;&mdash;&mdash;&mdash;" + "<br>Tab Views: " + d.tab_hits + "</span>"
+      return "<strong class='super-font'>" + d.title + "</strong>" + "<span class='super-font'>" + "<br>" + "&mdash;&mdash;&mdash;&mdash;" + "<br> Peak Chart Position: " + d.tip_peak_rank + "<br>" + "&mdash;&mdash;&mdash;&mdash;" + "<br>Tab Views: " + d.hits + "</span>"
     })
 
   var svg = d3.select("#chart1").append("svg")
@@ -23,8 +23,8 @@
 
   svg.call(tip)
 
-  billboard_titles = ['Hey Jude', 'Come Together', 'I Want To Hold Your Hand', 'She Loves You', 'Let It Be', 'Love Me Do', 'Get Back', 'We Can Work It Out', 'Yesterday', 'All You Need Is Love', 'Ticket To Ride', 'I Feel Fine', 'Hello Goodbye', 'Eight Days A Week', 'Penny Lane', 'The Long And Winding Road', 'Paperback Writer', 'For You Blue', 'Twist And Shout', 'Do You Want To Know A Secret', 'Yellow Submarine', 'Please Please Me', 'Nowhere Man', 'Something', 'Lady Madonna', 'Day Tripper', 'Free As A Bird', 'Got To Get You Into My Life', 'Strawberry Fields Forever', 'The Ballad Of John And Yoko', 'Eleanor Rigby', 'Real Love', 'Revolution', 'And I Love Her', 'I Saw Her Standing There', 'Matchbox', 'Rain', 'Slow Down', 'Thank You Girl', 'From Me To You', 'All My Loving', 'Yes It Is', 'Act Naturally', 'If I Fell', 'I Should Have Known Better', 'I Am The Walrus', 'Roll Over Beethoven', 'With A Little Help From My Friends', 'What Goes On', 'Why', 'The Inner Light']
-  tab_titles = ['Let It Be', 'Yesterday', 'Hey Jude', 'If I Fell', 'Come Together', 'All My Loving', 'Something', 'I Want To Hold Your Hand', 'Twist And Shout', 'Get Back', 'And I Love Her', 'Day Tripper', 'All You Need Is Love', 'Strawberry Fields Forever', 'I Saw Her Standing There', 'With A Little Help From My Friends', 'Yellow Submarine', 'Eight Days A Week', 'Revolution', 'Ticket To Ride', 'Love Me Do', 'She Loves You', 'Eleanor Rigby', 'I Feel Fine', 'Nowhere Man', 'I Am The Walrus', 'From Me To You', 'Hello Goodbye', 'Do You Want To Know A Secret', 'Penny Lane', 'We Can Work It Out', 'Please Please Me', 'Lady Madonna', 'I Should Have Known Better', 'The Long And Winding Road', 'Real Love', 'Paperback Writer', 'Free As A Bird', 'Act Naturally', 'Rain', 'Got To Get You Into My Life', 'Roll Over Beethoven', 'Yes It Is', 'The Ballad Of John And Yoko', 'For You Blue', 'What Goes On', 'Slow Down', 'Thank You Girl', 'Matchbox', 'The Inner Light', 'Why']
+  billboard_titles = ['Hey Jude', 'Come Together', 'I Want To Hold Your Hand', 'She Loves You', 'Let It Be', 'Love Me Do', 'Get Back', 'Yesterday', 'All You Need Is Love', 'Ticket To Ride', 'I Feel Fine', 'Eight Days A Week', 'Twist And Shout', 'Yellow Submarine', 'Nowhere Man', 'Something', 'Day Tripper', 'Strawberry Fields Forever', 'Eleanor Rigby', 'Revolution', 'And I Love Her', 'I Saw Her Standing There', 'All My Loving', 'If I Fell', 'I Am The Walrus', 'With A Little Help From My Friends', 'Blackbird', 'While My Guitar Gently Weeps', 'Here Comes The Sun', 'In My Life', 'Help', 'Across The Universe', 'Michelle', 'A Day In The Life', 'Norwegian Wood', 'Girl', 'Dont Let Me Down', 'Youve Got To Hide Your Love Away', 'A Hard Days Night', 'Ive Just Seen A Face', 'Lucy In The Sky With Diamonds', 'I Will', 'Oh Darling', 'Cant Buy Me Love', 'Till There Was You', 'Dear Prudence', 'Sgt Peppers Lonely Hearts Club Band', 'Here There And Everywhere', 'Helter Skelter', 'Ob-La-Di Ob-La-Da']
+  tab_titles = ['Let It Be', 'Yesterday', 'Hey Jude', 'Blackbird', 'If I Fell', 'While My Guitar Gently Weeps', 'Here Comes The Sun', 'Come Together', 'All My Loving', 'In My Life', 'Something', 'I Want To Hold Your Hand', 'Help', 'Twist And Shout', 'Get Back', 'Across The Universe', 'Michelle', 'And I Love Her', 'A Day In The Life', 'Day Tripper', 'Norwegian Wood', 'Girl', 'Dont Let Me Down', 'All You Need Is Love', 'Youve Got To Hide Your Love Away', 'Strawberry Fields Forever', 'A Hard Days Night', 'I Saw Her Standing There', 'Ive Just Seen A Face', 'Lucy In The Sky With Diamonds', 'With A Little Help From My Friends', 'I Will', 'Oh Darling', 'Yellow Submarine', 'Eight Days A Week', 'Revolution', 'Ticket To Ride', 'Love Me Do', 'Cant Buy Me Love', 'Till There Was You', 'She Loves You', 'Eleanor Rigby', 'I Feel Fine', 'Dear Prudence', 'Sgt Peppers Lonely Hearts Club Band', 'Nowhere Man', 'I Am The Walrus', 'Here There And Everywhere', 'Helter Skelter', 'Ob-La-Di Ob-La-Da']
   
   var xPositionScale = d3.scaleLinear()
     .domain([0,100])
@@ -43,14 +43,14 @@
     .range([0, height])
 
   var colorScale = d3.scaleLinear()
-    .domain([1,47])
+    .domain([1,100])
     .range(['#EB5852', '#f3d69b'])
 
 
   // Read in some external data. When we're done, run the function 'ready'
 
   d3.queue()
-    .defer(d3.csv, 'beatles_d3_billboards.csv')
+    .defer(d3.csv, 'beatles-d3-billboards-50-most-hits.csv')
     .await(ready)
 
   // This is 'ready':
@@ -190,7 +190,7 @@ function step1() {
         return yPositionScaleTab(d.title) - 16
       })
     .attr('width', function (d){
-      return widthScale(d.tab_hits)
+      return widthScale(d.hits)
     })
 
   // more_info.transition()
