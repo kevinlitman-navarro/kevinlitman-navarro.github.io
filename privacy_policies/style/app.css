@@ -1,25 +1,25 @@
 
 
-@font-face {
+/*@font-face {
     font-family: "NYTCheltenhamCond";
-    src: url("/fonts/cheltenham-cond-normal-700.ttf")
+    src: url("fonts/cheltenham-cond-normal-700.ttf")
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "NYTCheltenham";
-    src: url("/fonts/cheltenham-normal-300.ttf")
+    src: url("fonts/cheltenham-normal-300.ttf")
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "NYTFranklin";
-    src: url("/fonts/franklin-normal-600.ttf")
+    src: url("fonts/franklin-normal-600.ttf")
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 
 body {
