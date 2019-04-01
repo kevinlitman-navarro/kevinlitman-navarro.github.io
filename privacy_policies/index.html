@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="d3-tip.css">
+    <link rel="stylesheet" href="style/app.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
+    <link href="/Users/kevinlitnav/Library/Fonts/cheltenham-cond-normal-700.ttf" rel="stylesheet">
+    <link rel="icon" href="style/images/nyt_logo" sizes="16x16" type="image/ico">
+    <title>Opinion | Privacy Policies Are Criminally Inscrutable</title>
+
+  </head>
+<body class='light-theme'>
+<div class="container">
+  <div class="row justify-content-center"><!-- headline and intro -->
+    <div class="col-lg-10 ">
+      <p class="kicker row justify-content-center">Opinion</p>
+      <h1 class="headline super-font row justify-content-center">Privacy Policies Are Criminally Inscrutable</h1>
+      <p class="credit sub-font row justify-content-center">By Kevin Litman-Navarro</p>
+      <p class="date sub-font"></p>
+
+      <p class="body-text sub-font">
+                Your data is everywhere. If you use the internet, you're constantly interacting with massive platforms that collect information about you, from personal identifiers like name, age, and email address to behavioral cues like what you click on, time spent on certain websites, even how you scroll down a page. If you have a smart phone, your location is probably under constant surveillance, if not by your mobile provider, then by Google, or some free game you downloaded and forgot about months ago. 
+                <br><br>
+                The data collection market is already so lucrative and intertwined with our everyday lives that it's hard to imagine a time before data was currency. It's like we were handed Pandora's box, and a few tech companies reached over and opened it for us.
+                <br><br>
+                You may not be aware of the extent to which your data is being harvested. Still, these ethically dubious techniques are generally legal as long as a company discloses its data collection practices in its terms of service and privacy policy. By using a service, you sign a contract (either explicit or implicit), agreeing to grant access to your data as described in the disclosures. But the distance between what a platform discloses and what a user understands can be vast: privacy policies are lengthy documents written in legalese with a heavy dose of technical jargon. 
+                </p>
+
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-10 ">
+    <p class="subhead super-font">Explain GDPR and Readability Threshold</p>
+  
+
+      <p class="body-text sub-font">
+      The General Data Protection Regulation (GDPR), the nascent EU data privacy protection framework, aims to close the gap between disclosure and comprehension. When the GDPR was first implemented last year, every company that stores data from users in EU countries was forced to overhaul the language in its privacy policy to meet a new standard for readability. Now, any data collecting platform or service must disclose what data they collect and how that data is used in a "concise, transparent, intelligible and easily accessible form, using clear and plain language." 
+      <br><br>
+      TK TK TK Talk about setting an appropriate threshold using Flesch scale, mention Florida requiring a Flesch score of 45 or higher on insurance policies TK TK TK ... 
+      <br><br>[Stuart — Table below just for your ease of reference, probably would build out a legend for the chart]
+      </p>
+          <img src='style/images/flesch_readability_table.png'>
+      <p class="subhead super-font">Introduce chart showing that very few policies are readable</p>
+
+      <p class="body-text sub-font">
+        TK TK TK Describe data collection and testing procedure, contextalize by showing readabilty scores of other common texts, like Harry Potter (80) and the book of Genesis (-205) TK TK TK
+        <br><br>
+        TK TK TK Build in little web app allowing reader to paste in privacy policy and get readability score returned as a highlighted node on the following chart TK TK TK
+        <br><br>
+        Scroll over a circle to see more more information and an excerpt from the privacy policy.
+      </p>
+      <!-- <form class="form"> Paste a privacy policy 
+        <input type='text' class='form' name=policy id=policy><input type="submit" class='form' value="Submit">
+      </form> -->
+    </div>
+  </div>
+</div>
+
+    <div id="chart"></div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 ">
+      <p class="subhead super-font">Even if you understand them, they take forever to read</p>
+      <p class="body-text sub-font">
+        TK TK TK Talk about time to read if you summed up (286 minutes), compare to other things like movies and commutes to demonstrate how verbose privacy policies are TK TK TK 
+      </p>
+    </div>
+    <image src='style/images/time_to_read.png'>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 ">
+    <br><br>
+      <p class="body-text sub-font">
+        TK TK TK Conclusion, kicker, all that good stuff TK TK TK 
+    </p>
+
+
+
+    </div>
+  </div>
+</div>
+  <br><br>
+
+
+
+  <!-- This is D3, our graphing library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+
+  <!-- Now we include our actual visualization -->
+  <!--  <script src="tab_counts.js"></script> -->
+  <script src='bubble_chart.js'></script>
+  <!--<script src="team_wins_continuity.js"></script>-->
+  <script src="d3-tip.js"></script>
+</div>
+</body>
+</html>
