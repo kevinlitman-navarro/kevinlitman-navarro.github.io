@@ -1,6 +1,5 @@
 .d3-tip {
   line-height: 1;
-  font-weight: normal;
   padding: 8px;
   background: #f5f5f5;
   color: #111111;
@@ -37,7 +36,6 @@
   text-transform: capitalize;
   font-family:'NYTCheltenhamCond';
   font-size:20;
-  font-weight:600;
 }
 
 /* Creates a small triangle extender for the tooltip */
