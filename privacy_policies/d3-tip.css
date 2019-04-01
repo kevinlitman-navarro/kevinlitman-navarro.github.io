@@ -35,7 +35,7 @@
 .d3-tip .tip-platform {
   text-transform: capitalize;
   font-family:'NYTCheltenhamCond';
-  font-size:20;
+  font-size:14px;
 }
 
 /* Creates a small triangle extender for the tooltip */
