@@ -29,13 +29,13 @@
 .d3-tip strong {
   color: #111111;
   font-size: 14;
-  font-weight: bold;
+  
 }
 
 .d3-tip .tip-platform {
   text-transform: capitalize;
   font-family:'NYTCheltenhamCond';
-  
+  font-size:20;
 }
 
 /* Creates a small triangle extender for the tooltip */
