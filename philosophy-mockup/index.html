@@ -10,65 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
     <title>What is Philosophy?</title>
 
-    <style>
-
-    #container{
-  position: relative;
-}
-#sections{
-  width: 400px;
-  position: relative;
-  right:200;
-}
-#sections > div{
-  stroke: #DCCCC9;
-  opacity: .2;
-  margin-bottom: 500px;
-  z-index: 60;  
-}
-
-.d3-tip{
-  z-index:3;
-  position: -webkit-sticky;
-  position:sticky;
-}
-
-#sections > div.last-child{
-  margin-bottom: 30px;
-}
-#sections > div.graph-scroll-active{
-  opacity: 1;
-  z-index: 6;
-
-}
-#graph{
-  margin-left: 100px;
-  width: 800px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  float: right;
-  z-index: 0;
-}  
-
-#tooltips{
-  text-align: center;
-  left:90;
-  top:0;
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-#shrug{
-  text-align: center;
-}
-
- 
-    </style>
-
   </head>
 <body class='dark-theme'>
-
+<br><br><br><br><br>
 
 
 
@@ -116,7 +60,7 @@
         ME: Sounds right to me. <br><br>
         SOCRATES: Therefore, I must be a philosopher. Now, tell me, what is justice? <br><br>
         ME: I'm gonna go get another beer. <br><br>
-        SOCRATES: Very well, <a href='http://classics.mit.edu/Plato/republic.2.i.html'>I'm going down to the Piraeus</a>. <br><br>
+        SOCRATES: Very well, I'm off to the Piraeus. <br><br>
         <br><br>
       </p>
       <p class='body-text sub-font'>
@@ -156,8 +100,8 @@
     <div id='container' class='container-1'>
         <div id="graph"><div id='tooltips'></div></div>
         <div id='sections' class='sub-font body-text'>
-          <div>
-            <h3 class='super-font subhead'>Mapping the Stanford <br>Encyclopedia of Philosophy</h3>
+          <div id='scrolling'>
+            <h3 class='super-font subhead'>A Philosophical Constellation</h3>
             The <a href='https://plato.stanford.edu/'>Stanford Encyclopedia of Philosophy</a> (SEP) is a collection of nearly 2,000 articles summarizing a wide range of topics in philosophy. It is the most robust resource for philosophers brushing up on a subject, or looking for a cursory understanding of anything from <a href='https://plato.stanford.edu/entries/artificial-intelligence/'>Artificial Intelligence</a> to (non-brain eating) <a href='https://plato.stanford.edu/entries/zombies/'>Zombies</a>.
             <br><br>
             In its entirety, the SEP is the closest thing modern philosophers have to a comprehensive document describing the history of ideas. While not exhaustive, the Encylopedia is very thorough, and can be used to create a picture of the discipline. 
@@ -165,67 +109,71 @@
             In the chart to the right, each circle represents an entry in the SEP, and they are clustered according to the content of the entry. Scroll over a circle to see which entry you are looking at.
           </div>
 
-          <div>
+          <div id='scrolling'>
             For example, here are all the entries that are about Aristotle &mdash; perhaps the most famous philosopher of all time &mdash; clustered in the same general area.
           </div>
 
-          <div>
+          <div id='scrolling'>
             But the SEP isn't (completely) about old dead dudes. Alongside articles about classical philosophers who lived more than 2,000 years ago, the Enclopedia has a section dedicated to Feminist Studies.
             <br><br>
             Topics like <font style='font-style:italic'>Feminist Bioethics</font> are completely over looked by the dictionary definition of philosophy. In fact, the traditional definition overlooks around half of the Encyclopedia.
           </div>
 
-          <div>
+          <div id='scrolling'>
             <h3 class='super-font subhead'>Bad Words</h3>
             We can see just how inadequate this definition is by searching for keywords in the abstract of each entry. Each gray circle represents one topic in the Encyclopedia that isn't explicitly about <font style="color:#52BBB7">existence</font>, <font style="color:#D1A72A">knowledge</font>, or <font style="color:#EB5852">reality</font>.
           </div>
 
 
-          <div>
+          <div id='scrolling'>
             <h3 class='super-font subhead'><font style="color:#52BBB7">Why is there something instead of nothing?</font></h3>
             There's a way in which anything about anything is about <font style="color:#52BBB7">existence</font>, man. But when philosophers ponder existence (ontology, in academic-speak), they consider very abstract, but particular questions: Why is there something instead of nothing? If you know the answer, send me an email, please.
           </div>
 
-          <div>
+          <div id='scrolling'>
             In the 20th century, this strain of philosophical inquiry was typified by the Absurdist Albert Camus and the Existentialist John Paul Sartre, whose work is very much about what might be called the problem of human existence.
           </div>
 
-          <div>
+          <div id='scrolling'>
             <h3 class='super-font subhead'><font style="color:#D1A72A">Who knows?</font></h3>
             The study of <font style="color:#D1A72A">knowledge</font> (epistemology, in the ivory tower) is important to the overall project of understanding the world, but does it make up a third of the discipline? 
           </div>
 
-          <div>
+          <div id='scrolling'>
             Key concepts in epistemology include essentially every aspect of cognition. What is a belief? Can anyone really know anything or are the skeptics right? How would we know? 
             <br><br>
             If a man believes that there is a barn in a field, because he sees what he percieves as a barn in a field, but what he sees is in fact the facade of a barn, but not a whole barn, placed by some trickster farmer/evil demon in order to fool the man into believing he sees a barn in a field, is the man justified in believing there is a barn in a field, and if there is a second thing that looks like a barn in the field and it actually is a barn in the field, but it's not the thing that the man saw that made him believe that there was a barn in the field, does the man <font style='font-style:italic'>know</font> there is a barn in the field? 
           </div>
 
-          <div>
+          <div id='scrolling'>
             <h3 class='super-font subhead'><font style="color:#EB5852">What is real?</font></h3>
             Like epistemology, the study of <font style="color:#EB5852">reality</font> (metaphysics, in hot-boxed dorm rooms) extends to many different areas of philosophy. While metaphysics and ontology are closely related, the former mostly assumes that things already exist and concerns itself with figuring out <font style='font-style:italic'>how things exist</font>. 
           </div>
 
-          <div>
+          <div id='scrolling'>
             Metaphysics is the stuff of sci-fi fever dreams. Is time travel possible? Does the Uncertainty Principle conflict with Determinism? Is there such a thing as objective reality, or is everything constructed by consciousness? 
           </div>
 
-          <div>
+          <div id='scrolling'>
             <h3 class='super-font subhead'>But What About Feminist Bioethics?</h3>
             There is a whole universe of topics missed by the dictionary definition of philosophy, and it's not limited to niche topics like <a href='https://plato.stanford.edu/entries/feminist-bioethics/'><font style='font-style:italic'>Feminist Bioethics</font></a>, <a href='https://plato.stanford.edu/entries/spacetime-theories/'><font style='font-style:italic'>Absolute and Relational Theories of Space and Motion</font></a>, and <a href='https://plato.stanford.edu/entries/reflective-equilibrium/'><font style='font-style:italic'>Reflective Equilibrium</font></a>.
           </div>
 
-          <div>
+          <div id='scrolling'>
             Even a sufficiently wide interpretation of the study of knowledge, existence, and reality completely misses the entire field of political philsophy. Other major topics of humanistic philosophical inquiry, like the nature of personal identity, are also overlooked.
           </div>
 
-          <div>
+          <div id='scrolling'>
+            <h3 class='super-font subhead'>Size Matters</h3>
+            Here you can see how much is missed by the dictionary definition of philosophy. In fact, the plurality of entries in the SEP don't fit neatly into any of the three categories.
+          </div>
+
+          <div id='scrolling'>
             <h3 class='super-font subhead'>What is philosophy? ¯\_(ツ)_/¯</h3>
             Clearly, the dictionary definition of philosophy misses the mark. Likewise, it seems reductive to say that philosophy is the practice of asking questions, or harrassing strangers on the street. 
             <br><br>
             Still there must be something that unites the disparate topics in the SEP. By examining the language used in each entry, we can entertain a new definition &mdash; philosophy is about constucting theories of things.
           </div>
-
         
         </div>
     </div>
