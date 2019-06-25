@@ -67,7 +67,12 @@
       })
       //.attr("transform", function(d) { return "translate(" + xPositionScale(d.x_coord) + "," + yPositionScale(d.y_coord) + ")"})
 
-   var entryCircles = entries.append('circle')
+    var entryLinks = entries.append('a')
+      .attr("xlink:href", function(d) { return d.url})
+      .attr('target', '_blank')
+      
+
+   var entryCircles = entryLinks.append('circle')
       .attr('r', 4)
       .attr('cx', function (d) {
         return xPositionScale(d.x_coord)
@@ -85,30 +90,30 @@
       .attr('z-index', -1)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
-      .on('click', function() {
+//       .on('click', function() {
         
 
-        d3.select(this)
-          .transition()
-          .duration(1000)
-          .attr('opacity',1)
-          .attr('z-index', 100)
-          .attr("r", 200);
+//         d3.select(this)
+//           .transition()
+//           .duration(1000)
+//           .attr('opacity',1)
+//           .attr('z-index', 100)
+//           .attr("r", 200);
 
 
-        d3.select(this.parentNode)
-          .append('text')
-          .attr('font-size', 14)
-          .attr('x', function (d) {
-              return xPositionScale(d.x_coord) - 200
-            })
-          .attr('y', function (d) {
-              return yPositionScale(d.y_coord)
-            })
-          .attr("dy", ".35em")
-          .attr('z-index', 101)
-          .text(function(d){ return d.abstract.slice(0,100)});
-})
+//         d3.select(this.parentNode)
+//           .append('text')
+//           .attr('font-size', 14)
+//           .attr('x', function (d) {
+//               return xPositionScale(d.x_coord) - 200
+//             })
+//           .attr('y', function (d) {
+//               return yPositionScale(d.y_coord)
+//             })
+//           .attr("dy", ".35em")
+//           .attr('z-index', 101)
+//           .text(function(d){ return d.abstract.slice(0,100)});
+// })
 
       var existenceSize=d3.selectAll("#nameExistence").size()
       var knowledgeSize=d3.selectAll("#nameKnowledge").size()
