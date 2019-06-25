@@ -65,14 +65,13 @@
             rootElement.scrollLeft
 
       nodel.html(content)
-        .style('opacity', 1).style('pointer-events', 'all').style('position', 'sticky')
+        .style('opacity', 1).style('pointer-events', 'all')
 
       while (i--) nodel.classed(directions[i], false)
       coords = directionCallbacks.get(dir).apply(this)
       nodel.classed(dir, true)
-      nodel.style('top', (coords.top + poffset[0]) + scrollTop + 'px')
-      nodel.style('left', (coords.left + poffset[1]) + scrollLeft + 'px')
-      nodel.style('position', 'sticky')
+        .style('top', (coords.top + poffset[0]) + scrollTop + 'px')
+        .style('left', (coords.left + poffset[1]) + scrollLeft + 'px')
 
       return tip
     }
@@ -82,9 +81,7 @@
     // Returns a tip
     tip.hide = function() {
       var nodel = getNodeEl()
-      nodel.style('opacity', 0)
-      nodel.style('pointer-events', 'none')
-      nodel.style('position', 'sticky')
+      nodel.style('opacity', 0).style('pointer-events', 'none')
       return tip
     }
 
@@ -272,6 +269,7 @@
         .style('opacity', .5)
         .style('pointer-events', 'none')
         .style('box-sizing', 'border-box')
+
 
       return div.node()
     }

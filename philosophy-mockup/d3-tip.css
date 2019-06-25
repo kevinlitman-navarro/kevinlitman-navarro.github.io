@@ -1,15 +1,17 @@
 .d3-tip {
   line-height: 1;
-  font-weight: bold;
-  padding: 12px;
+  font-weight: normal;
+  padding: 8px;
   background: #111111;
-  color: #DDDDC9;
   border-radius: 0px;
   pointer-events: none;
-  z-index: 111;
-  position: -webkit-sticky;
-  position: sticky;
+}
 
+.super-font {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.sub-font {
+    font-family: 'Lora', serif;
 }
 
 /* 
@@ -17,7 +19,13 @@
   with the class of d3-tip 
 */
 .d3-tip span {
-  color: #DDDDC9;
+  font-size: 14;
+}
+
+.d3-tip strong {
+  font-size: 14;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* Creates a small triangle extender for the tooltip */
@@ -28,10 +36,8 @@
   width: 0%;
   line-height: 0;
   color: rgba(0, 0, 0, 0.8);
-  position: -webkit-sticky;
   position: sticky;
   pointer-events: none;
-  z-index: 111
 }
 
 /* Northward tooltips */
@@ -41,17 +47,12 @@
   top: 100%;
   left: 0;
   text-align: center;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 111
 }
 
 /* Eastward tooltips */
 .d3-tip.e:after {
   content: "\25C0";
   margin: -4px 0 0 0;
-  position: -webkit-sticky;
-  position: sticky;
   top: 50%;
   left: -8px;
 }
@@ -60,8 +61,6 @@
 .d3-tip.s:after {
   content: "\25B2";
   margin: 0 0 1px 0;
-  position: -webkit-sticky;
-  position: sticky;
   top: -8px;
   left: 0;
   text-align: center;
@@ -71,8 +70,6 @@
 .d3-tip.w:after {
   content: "\25B6";
   margin: -4px 0 0 -1px;
-  position: -webkit-sticky;
-  position: sticky;
   top: 50%;
   left: 100%;
 }

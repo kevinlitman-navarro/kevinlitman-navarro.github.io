@@ -12,7 +12,7 @@
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return "<font style='color:" + colorScale(d.dictionary_definition_tag) + "'>"  + "<strong>" + d.title + "</strong>" + "</font>"
+      return "<strong style='color:" + colorScale(d.dictionary_definition_tag) + "'>"  + d.title + "</strong>"
     })
 
   var svg = d3.select("#graph").append("svg")
@@ -32,8 +32,8 @@
     .range([height,0])
 
   var radiusScale = d3.scaleSqrt()
-    .domain([1952, 2017])
-    .range([1,5])
+    .domain([141, 742])
+    .range([7,70])
 
   var colorScale = d3.scaleOrdinal()
     .domain(['None','Knowledge','Reality','Existence'])
@@ -57,8 +57,14 @@
 
     var entries = svg.selectAll('g')
       .data(datapoints)
-      .enter()
-      .append('g')
+      .enter().append('g')
+      .attr('id','entry')
+      .attr('x', function (d) {
+        return xPositionScale(d.x_coord)
+      })
+      .attr('y', function (d) {
+        return yPositionScale(d.y_coord)
+      })
       //.attr("transform", function(d) { return "translate(" + xPositionScale(d.x_coord) + "," + yPositionScale(d.y_coord) + ")"})
 
    var entryCircles = entries.append('circle')
@@ -89,6 +95,7 @@
           .attr('z-index', 100)
           .attr("r", 200);
 
+
         d3.select(this.parentNode)
           .append('text')
           .attr('font-size', 14)
@@ -102,6 +109,16 @@
           .attr('z-index', 101)
           .text(function(d){ return d.abstract.slice(0,100)});
 })
+
+      var existenceSize=d3.selectAll("#nameExistence").size()
+      var knowledgeSize=d3.selectAll("#nameKnowledge").size()
+      var noneSize=d3.selectAll("#nameNone").size()
+      var realitySize=d3.selectAll("#nameReality").size()
+
+      console.log(existenceSize)
+      console.log(noneSize)
+      console.log(knowledgeSize)
+      console.log(realitySize)
 
 
 
@@ -117,48 +134,6 @@
     //   .attr('y1', function(d) { return yPositionScale(d.start_y) })
     //   .attr('x2', function(d) { return xPositionScale(d.finish_x) })
     //   .attr('y2', function(d) { return yPositionScale(d.finish_y) })
-      
-  
-
-    //svg.append('text')
-    // .data(datapoints)
-    //  .attr("x", (width / 2))             
-    //  .attr("y", 0 - (margin.top / 4))
-    //  .attr("text-anchor", "middle")  
-    //  .style("font-size", "20px") 
-    //  .style("font-weight", "bold")  
-    //  .style('fill', '#DDDDC9')
-    //  .text("How team roster continuity is related to wins")
-
-    // var yAxis = d3.axisLeft(yPositionScale)
-    //   .tickSize(0)
-    //   .ticks(6)
-    // svg.append("g")
-    //   .attr("class", "axis y-axis")
-    //   .style('stroke', '#DDDDC9')
-    //   .style("font-weight", "light")  
-    //   .style("font-size", "14px")
-    //   .call(yAxis)
-
-    // svg.selectAll(".y-axis text")
-    //  .attr("transform", "translate(" + ypadding + ",0)")
-
-
-    // var xAxis = d3.axisBottom(xPositionScale)
-    //   .tickSize(0)
-    //   .ticks(5)
-    // svg.append("g")
-    //   .attr("class", "axis x-axis")
-    //   .attr("transform", "translate(0," + height + ")")
-    //   .style('stroke', '#DDDDC9')
-    //   .style("font-weight", "light")  
-    //   .style("font-size", "14px")
-    //   .call(xAxis)
-
-    // svg.selectAll(".x-axis text")
-    //   .attr("transform", "translate(0," + xpadding + ")")
-
-    // Always cut and paste the code for the axes!
 
   var steps = [
   step0,
@@ -173,7 +148,8 @@
   step9,
   step10,
   step11,
-  step12
+  step12,
+  step13
 ]
 
 var currentStep = 0
@@ -184,7 +160,7 @@ var gs = d3.graphScroll()
       .sections(d3.selectAll('#sections > div'))
       .offset(400)
       .on('active', function(i){
-    currentStep = (i) % 13
+    currentStep = (i) % 14
     steps[currentStep].apply()})    
 
 function step0() {
@@ -194,23 +170,6 @@ function step0() {
     .attr("fill", '#DCCCC9')
     .attr('r', 4)
 
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
-
-  // more_info.transition()
-  //   .duration(1000)
-  //   .attr("y", function (d) {
-  //       return yPositionScaleBillboard(d.title)
-  //     })
-  //   .text(function(d) {
-  //     return  "Peak chart position: " +  d.peak_rank + " for " + d.weeks_on_chart + " weeks"
-  //   })
-  //   .attr('x', width-300)
-
-  
 }
 
 function step1() {
@@ -219,14 +178,11 @@ function step1() {
     .duration(1000)
     .attr('r', 0)
 
-  // connectionLines.transition()
-  //   .duration(1000)
-  //   .attr('stroke-width', 0)
-
   d3.selectAll('.Aristotle ')
     .transition()
     .duration(1000)
     .attr('r', 8)
+    .attr("fill", '#DCCCC9')
     .attr('stroke-width', 1)
 
   d3.selectAll('text')
@@ -234,23 +190,7 @@ function step1() {
     .attr('font-size', 0)
     .duration(1000)
     .remove()
-
-  // entries.filter(function(d) { return d.class ='Plato'})
-  //   .transition()
-  //   .duration(1000)
-  //   .attr('r', 8)
-
-  // more_info.transition()
-  //   .duration(1000)
-  //   .attr("y", function (d) {
-  //       return yPositionScaleBillboard(d.title)
-  //     })
-  //   .text(function(d) {
-  //     return  "Peak chart position: " +  d.peak_rank + " for " + d.weeks_on_chart + " weeks"
-  //   })
-  //   .attr('x', width-300)
-
-  
+ 
 }
 
 function step2() {
@@ -259,16 +199,12 @@ function step2() {
     .duration(1000)
     .attr('r', 0)
 
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
 
   d3.selectAll('.Feminism')
     .transition()
     .duration(1000)
     .attr('r', 8)
+    .attr("fill", '#DCCCC9')
     .text('ooh yeah')
     
 
@@ -276,21 +212,7 @@ function step2() {
     .transition()
     .duration(1000)
     .attr('r', 8)
-
-  // entries.filter(function(d) { return d.class ='Plato'})
-  //   .transition()
-  //   .duration(1000)
-  //   .attr('r', 8)
-
-  // more_info.transition()
-  //   .duration(1000)
-  //   .attr("y", function (d) {
-  //       return yPositionScaleBillboard(d.title)
-  //     })
-  //   .text(function(d) {
-  //     return  "Peak chart position: " +  d.peak_rank + " for " + d.weeks_on_chart + " weeks"
-  //   })
-  //   .attr('x', width-300)
+    .attr("fill", '#DCCCC9')
 
   
 }
@@ -309,23 +231,6 @@ function step3() {
     .attr("fill", function (d) {
         return colorScale(d.dictionary_definition_tag)
       })
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
-
-  // more_info.transition()
-  //   .duration(1000)
-  //   .attr("y", function (d) {
-  //       return yPositionScaleBillboard(d.title)
-  //     })
-  //   .text(function(d) {
-  //     return  "Peak chart position: " +  d.peak_rank + " for " + d.weeks_on_chart + " weeks"
-  //   })
-  //   .attr('x', width-300)
-
   
 }
 
@@ -341,6 +246,9 @@ function step4() {
     .transition()
     .duration(1000)
     .attr('r', 4)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
 
   d3.selectAll('#nameKnowledge')
     .transition()
@@ -357,22 +265,6 @@ function step4() {
     .duration(1000)
     .attr('r', 0)
 
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
-
-  // more_info.transition()
-  //   .duration(1000)
-  //   .attr("y", function (d) {
-  //       return yPositionScaleTab(d.title)
-  //     })
-  //   .attr('x', 10)
-  //   .text(function(d) {
-  //     return  
-  //   })
-
 }
 
 function step5() {
@@ -384,31 +276,20 @@ function step5() {
   d3.selectAll('.Sartre')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
     
 
   d3.selectAll('.Camus')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
     
-  
-
-  // more_info.transition()
-  //   .duration(1000)
-  //   .attr("y", function (d) {
-  //       return yPositionScaleTab(d.title)
-  //     })
-  //   .attr('x', 10)
-  //   .text(function(d) {
-  //     return  
-  //   })
 
 }
 
@@ -429,6 +310,9 @@ function step6() {
     .transition()
     .duration(1000)
     .attr('r', 4)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
 
   d3.selectAll('#nameReality')
     .transition()
@@ -439,12 +323,6 @@ function step6() {
     .transition()
     .duration(1000)
     .attr('r', 0)
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
 
 }
 
@@ -458,36 +336,33 @@ function step7() {
     .filter('#nameKnowledge')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
 
   d3.selectAll('.Self-Deception')
     .filter('#nameKnowledge')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
 
   d3.selectAll('.The.Analysis.Of.Knowledge')
     .filter('#nameKnowledge')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
 
 
 }
 
 function step8() {
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
 
  d3.selectAll('#nameExistence')
     .transition()
@@ -503,17 +378,14 @@ function step8() {
     .transition()
     .duration(1000)
     .attr('r', 4)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
 
   d3.selectAll('#nameNone')
     .transition()
     .duration(1000)
     .attr('r', 0)
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
 
 }
 
@@ -527,62 +399,76 @@ function step9() {
     .filter('#nameReality')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
 
   d3.selectAll('.Consciousness')
     .filter('#nameReality')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
 
   d3.selectAll('.The.Uncertainty.Principle')
     .filter('#nameReality')
     .transition()
     .attr('r', 8)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .duration(1000)
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
 
 
 }
 
 function step10() {
 
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
+  entryCircles.transition()
+      .duration(1000)
+      .attr('r', 0)
+      // .attr('cy', function (d) {
+      //     return yPositionScale(d.y_coord)
+      //   })
+      // .attr('cx', function (d) {
+      //     return xPositionScale(d.x_coord)
+      //   })
 
- d3.selectAll('#nameExistence')
-    .transition()
-    .duration(1000)
-    .attr('r', 0)
+ // d3.selectAll('#nameExistence')
+ //    .transition()
+ //    .duration(1000)
+ //    .attr('r', 0)
+ //    .attr('cy', function (d) {
+ //        return yPositionScale(d.y_coord)
+ //      })
+ //    .attr('cx', function (d) {
+ //        return xPositionScale(d.x_coord)
+ //      })
 
-  d3.selectAll('#nameKnowledge')
-    .transition()
-    .duration(1000)
-    .attr('r', 0)
-
-  d3.selectAll('#nameReality')
-    .transition()
-    .duration(1000)
-    .attr('r', 0)
+ //  d3.selectAll('#nameKnowledge')
+ //    .transition()
+ //    .duration(1000)
+ //    .attr('r', 0)
+ //    .attr('cy', function (d) {
+ //        return yPositionScale(d.y_coord)
+ //      })
+ //    .attr('cx', function (d) {
+ //        return xPositionScale(d.x_coord)
+ //      })
 
   d3.selectAll('#nameNone')
     .transition()
     .duration(1000)
     .attr('r', 4)
-
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
+    .attr('cy', function (d) {
+        return yPositionScale(d.y_coord)
+      })
+    .attr('cx', function (d) {
+        return xPositionScale(d.x_coord)
+      })
 
 }
 
@@ -590,56 +476,165 @@ function step11() {
 
    d3.selectAll('text')
     .transition()
-    .attr('font-size', 0)
     .duration(1000)
+    .attr('font-size', 0)
     .remove()
 
   entryCircles.transition()
     .duration(1000)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
     .attr('r', 0)
+    .attr('cy', function (d) {
+        return yPositionScale(d.y_coord)
+      })
+    .attr('cx', function (d) {
+        return xPositionScale(d.x_coord)
+      })
+
 
   d3.selectAll('.Personal.Identity')
     .filter('#nameNone')
     .transition()
-    .attr('r', 8)
     .duration(1000)
+    .attr('r', 8)
+    .attr('cy', function (d) {
+        return yPositionScale(d.y_coord)
+      })
+    .attr('cx', function (d) {
+        return xPositionScale(d.x_coord)
+      })
+    
 
   d3.selectAll('.Law')
     .filter('#nameNone')
     .transition()
-    .attr('r', 8)
     .duration(1000)
+    .attr('r', 8)
+    .attr('cy', function (d) {
+        return yPositionScale(d.y_coord)
+      })
+    .attr('cx', function (d) {
+        return xPositionScale(d.x_coord)
+      })
+    
 
   d3.selectAll('.Political')
     .filter('#nameNone')
     .transition()
-    .attr('r', 8)
     .duration(1000)
+    .attr('r', 8)
+    .attr('cy', function (d) {
+        return yPositionScale(d.y_coord)
+      })
+    .attr('cx', function (d) {
+        return xPositionScale(d.x_coord)
+      })
+    
 
 
 }
 
 function step12() {
 
-  d3.selectAll('text')
-    .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
-
   entryCircles.transition()
-    .duration(1000)
+    .duration(1700)
     .attr('r', 4)
     .attr("fill", function (d) {
         return colorScale(d.dictionary_definition_tag)
       })
 
-  d3.selectAll('text')
+  d3.selectAll('#nameExistence')
     .transition()
-    .attr('font-size', 0)
-    .duration(1000)
-    .remove()
+    .duration(1700)
+    .attr('cx',width*.6)
+    .attr('cy',height/2)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
+    .attr('opacity',1)
+    .attr('r', function (d) {
+      return radiusScale(existenceSize)
+    })
+    .filter(function (d) {
+      return d.title != 'Albert Camus'
+    })
+      .attr('r',0)
 
+  d3.selectAll('#nameKnowledge')
+    .transition()
+    .duration(1700)
+    .attr('cx',width*.4)
+    .attr('cy',height/2)
+    .attr('opacity',1)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
+    .attr('r', function (d) {
+      return radiusScale(knowledgeSize)
+    })
+    .filter(function (d) {
+      return d.title != 'Certainty'
+    })
+      .attr('r',0)
+
+  d3.selectAll('#nameReality')
+    .transition()
+    .duration(1700)
+    .attr('cx',width*.8)
+    .attr('cy',height/2)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
+    .attr('opacity',1)
+    .attr('r', function (d) {
+      return radiusScale(realitySize)
+    })
+    .filter(function (d) {
+      return d.title != 'Consciousness'
+    })
+      .attr('r',0)
+
+
+  d3.selectAll('#nameNone')
+    .transition()
+    .duration(1700)
+    .attr('cx',width*.2)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
+    .attr('opacity',1)
+    .attr('cy',height/2)
+    .attr('r', function (d) {
+      return radiusScale(noneSize)
+    })
+    .filter(function (d) {
+      return d.title != 'Feminist Political Philosophy'
+    })
+      .attr('r',0)
+
+}
+
+function step13() {
+
+  d3.selectAll('circle')
+    .transition()
+    .duration(1700)
+    .attr('r',4)
+
+  entryCircles.transition()
+    .duration(1700)
+    .attr('r', 4)
+    .attr("fill", function (d) {
+        return colorScale(d.dictionary_definition_tag)
+      })
+    .attr('cy', function (d) {
+        return yPositionScale(d.y_coord)
+      })
+    .attr('cx', function (d) {
+        return xPositionScale(d.x_coord)
+      })
 }
 
       
