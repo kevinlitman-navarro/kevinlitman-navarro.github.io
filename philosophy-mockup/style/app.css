@@ -13,6 +13,11 @@
   z-index: 60;  
 }
 
+mark { 
+  background-color: gold;
+  color: black;
+}
+
 .d3-tip strong{
   font-size: 20;
 }
