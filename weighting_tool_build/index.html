@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="d3-tip.css">
+    <link rel="stylesheet" href="style/app.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
+    <title>Opinion | Privacy Policies Are Criminally Inscrutable</title>
+
+  </head>
+<body class='light-theme'>
+<div class="container">
+
+  <div class="header col-md-14 text-center"><!-- headline and intro -->
+      <h1 class="text-center headline">AI Vibrancy Index: Composite Measures</h1>
+      <span id='cross-label'>Cross-country comparison</span>
+      <label class="switch">
+        <input type="checkbox" onclick="toggle()" id="toggleSwitch">
+        <span class="slider round"></span>
+      </label>
+      <span id='single-label'>Single-country deep dive</span>
+  </div>
+
+  <div class='cross-country col-md-14'>
+    <p class='text-center'>Drag the sliders to change the weight for that variable, then click update to see the new weights reflected in the chart below.</p>
+    <p class='update-click text-center' onclick="updateCrossCountry()">Update</p>
+    <div class='filters-and-weights row'>
+
+      <div class='research-weights'>
+        <h2 class='primary-weight' style='color:#38735D'>Research and Development<br><input type='range' class='primary-weight' min='0' max='1' value='.7' step='.1' name='research-and-development-weight'></h2>
+
+        <span class='weight-label'>Number of conference papers Percapita scaled</span>
+        <input type='range' class='weight' min='0' max='1' value=.6 step='.1' name='conference-papers-per-capita-weight'>
+        <span class='weight-label'>Count of conference citation scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='conference-citation-weight'>
+        <span class='weight-label'>Count of citation references scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='citation-references-weight'>
+        <span class='weight-label'>Number of journal papers Percapita scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.8' step='.1' name='journal-papers-per-capita-weight'>
+        <span class='weight-label'>Count of journal references scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='journal-references-weight'>
+        <span class='weight-label'>Count of journal citation scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='journal-citations-weight'>
+        <span class='weight-label'>Number of patents Percapita scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='patents-per-capita-weight'>
+        <span class='weight-label'>Count of patent citation scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='patent-citations-weight'>
+        <span class='weight-label'>Count of patent references scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='patents-references-weight'>
+        <span class='weight-label'>Number of Deep Learning papers Percapita scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='deep-learning-papers-per-capita-weight'>
+        <span class='weight-label'>Revealed Comparative Advantage - Deep Learning Papers scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='revealed-comparative-advantage-weight'>
+      </div>
+
+      <div class='economy-weights'>
+        <h2 class='primary-weight' style='color:#2976A6'>Economy<br><input type='range' class='primary-weight' min='0' max='1' value='.6' step='.1' name='economy-weight'></h2> 
+
+        <span class='weight-label'>Percentile Rank scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.3' step='.1' name='percentile-rank-weight'>
+        <span class='weight-label'>Share of total enrollment scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.1' step='.1' name='share-enrollment-weight'>
+        <span class='weight-label'>Skill Penetration Index scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='skill-penetration-weight'>
+        <span class='weight-label'>Number of AI occupational skills scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='number-occupations-weight'>
+        <span class='weight-label'>Total Funding Amount Percapita scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.8' step='.1' name='funding-per-capita-weight'>
+        <span class='weight-label'>Total Number of Startups Percapita scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.7' step='.1' name='startups-per-capita-weight'>
+        <span class='weight-label'>Total number of hires on LinkedIn scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.5' step='.1' name='hires-per-capita-weight'>
+        <span class='weight-label'>AI hiring index scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.5' step='.1' name='hiring-index-weight'>
+      </div>
+
+      <div class='inclusion-weights'>
+        <h2 class='primary-weight' style='color:#F28F38'>Inclusion<br><input type='range' class='primary-weight' min='0' max='1' value='.7' step='.1' name='inclusion-weight'></h2>
+
+        <span class='weight-label'>Proportion of female AI authors scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.6' step='.1' name='female-authors-weight'>
+        <span class='weight-label'>Proportion of female in AI workplace scaled</span>
+        <input type='range' class='weight' min='0' max='1' value='.5' step='.1' name='female-workplace-weight'>
+
+
+
+      </div>
+    </div>
+
+    <div class="chart-title col-md-14">
+      <h1 >Cross-country AI Vibrancy in Three Pillars: <font style='color:#38735D'>Research and Development,</font> <font style='color:#2976A6'>Economy</font>, and <font style='color:#F28F38'>Inclusion</font></h1>
+    </div>
+    <div class='chart comparison col-md-14'>
+    </div>
+    <br><br>
+
+    <div class="chart-title col-md-14">
+      <h1>Cross-country AI Vibrancy in 21 Variables</h1>
+    </div>
+    <div class='chart heatmap col-md-14'>
+    </div>
+
+  </div>
+
+  <div class='single-country col-md-14 text-center'>
+
+    <select class='country-select' onchange="updateSingleCountry()">
+      <option value="AUS">Australia</option>
+      <option value="AUT">Austria</option>
+      <option value="BEL">Belgium</option>
+      <option value="BRA">Brazil</option>
+      <option value="CAN">Canada</option>
+      <option value="CHN">China</option>
+      <option value="DNK">Denmark</option>
+      <option value="FIN">Finland</option>
+      <option value="FRA">France</option>
+      <option value="DEU">Germany</option>
+      <option value="IND">India</option>
+      <option value="IRL">Ireland</option>
+      <option value="ISR">Israel</option>
+      <option value="ITA">Italy</option>
+      <option value="JPN">Japan</option>
+      <option value="NLD">Netherlands</option>
+      <option value="NOR">Norway</option>
+      <option value="PRT">Portugal</option>
+      <option value="RUS">Russia</option>
+      <option value="SGP">Singapore</option>
+      <option value="ZAF">South Africa</option>
+      <option value="ESP">Spain</option>
+      <option value="SWE">Sweden</option>
+      <option value="CHE">Switzerland</option>
+      <option value="ARE">United Arab Emirates</option>
+      <option value="GBR">United Kingdom</option>
+      <option value="USA">United States of America</option>
+    </select>
+
+
+    <div class="chart-title col-md-14">
+      <h1><font style='color:#00A0B0'>Index Scores by Domain</font> vs. Average Index Scores for Countries With Similar Economic Footprint</h1>
+    </div>
+    <div class='chart radar col-md-14'>
+    </div>
+
+    <div class='chart table col-md-14'>
+    </div>
+
+    <div class="chart-title col-md-14">
+      <h1>Setting Policy Priorities: AI Vibrancy in <font style='color:#38735D'>Research and Development,</font> <font style='color:#2976A6'>Economy</font>, and <font style='color:#F28F38'>Inclusion</font></h1>
+    </div>
+    <div class='chart priorities col-md-14'>
+    </div>
+
+
+    <div class="chart-title col-md-14">
+      <h1>Setting Trends: AI Vibrancy Changes 2015-2018</h1>
+    </div>
+    <div class='chart trendline col-md-14'>
+    </div>
+  </div>
+
+
+      
+
+
+
+
+
+</body>
+  <script src="d3.v5.9.1.min.js"></script>
+<!--   <script src='viz.js'></script> -->
+  <script src='viz2.js'></script>
+  <script>
+
+  initRadar();
+  initComparison();
+  initHeatmap();
+  initTrendline();
+  initPriorities();
+
+</script>
+  <script src="d3-tip.js"></script>
+  <script>
+    function toggle() {
+  // Get the checkbox
+  var checkBox = document.getElementById("toggleSwitch");
+ 
+  if (checkBox.checked == true){
+    document.getElementsByClassName('cross-country')[0].style.display = 'none'
+    document.getElementsByClassName('single-country')[0].style.display = 'block'
+    document.getElementById('single-label').style.opacity = 1
+    document.getElementById('cross-label').style.opacity = .4
+  } else {
+    document.getElementsByClassName('cross-country')[0].style.display = 'block'
+    document.getElementsByClassName('single-country')[0].style.display = 'none'
+    document.getElementById('cross-label').style.opacity = 1
+    document.getElementById('single-label').style.opacity = .4
+  }
+}
+  </script>
+
+</html>

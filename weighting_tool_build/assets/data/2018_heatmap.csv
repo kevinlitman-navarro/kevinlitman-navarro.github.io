@@ -1,0 +1,568 @@
+code,metrics,index_score
+AUS,Number of conference papers Percapita scaled,38.69002573
+AUT,Number of conference papers Percapita scaled,23.08158014
+BEL,Number of conference papers Percapita scaled,21.85182382
+BRA,Number of conference papers Percapita scaled,2.308158014
+CAN,Number of conference papers Percapita scaled,31.68987438
+CHN,Number of conference papers Percapita scaled,4.890646284
+DNK,Number of conference papers Percapita scaled,26.20326926
+FIN,Number of conference papers Percapita scaled,43.89284093
+FRA,Number of conference papers Percapita scaled,16.08142879
+DEU,Number of conference papers Percapita scaled,22.41940366
+IND,Number of conference papers Percapita scaled,0.24595126399999998
+IRL,Number of conference papers Percapita scaled,34.62237021
+ISR,Number of conference papers Percapita scaled,29.1357651
+ITA,Number of conference papers Percapita scaled,13.43272287
+JPN,Number of conference papers Percapita scaled,16.27062207
+NLD,Number of conference papers Percapita scaled,21.18964734
+NOR,Number of conference papers Percapita scaled,28.56818526
+PRT,Number of conference papers Percapita scaled,28.37899198
+RUS,Number of conference papers Percapita scaled,0.359467232
+SGP,Number of conference papers Percapita scaled,86.74511881
+ZAF,Number of conference papers Percapita scaled,0.24595126399999998
+ESP,Number of conference papers Percapita scaled,15.23005903
+SWE,Number of conference papers Percapita scaled,22.60859694
+CHE,Number of conference papers Percapita scaled,52.21734524
+ARE,Number of conference papers Percapita scaled,8.797487513
+GBR,Number of conference papers Percapita scaled,27.62221886
+USA,Number of conference papers Percapita scaled,31.68987438
+AUS,Number of journal papers Percapita scaled,65.03608661
+AUT,Number of journal papers Percapita scaled,29.10986367
+BEL,Number of journal papers Percapita scaled,37.44987971
+BRA,Number of journal papers Percapita scaled,1.635926223
+CAN,Number of journal papers Percapita scaled,48.67682438
+CHN,Number of journal papers Percapita scaled,9.847634322000001
+DNK,Number of journal papers Percapita scaled,42.58219727
+FIN,Number of journal papers Percapita scaled,48.8372093
+FRA,Number of journal papers Percapita scaled,19.64715317
+DEU,Number of journal papers Percapita scaled,23.97754611
+IND,Number of journal papers Percapita scaled,1.1708099440000002
+IRL,Number of journal papers Percapita scaled,34.72333601
+ISR,Number of journal papers Percapita scaled,39.21411387
+ITA,Number of journal papers Percapita scaled,18.68484362
+JPN,Number of journal papers Percapita scaled,15.797915
+NLD,Number of journal papers Percapita scaled,45.78989575
+NOR,Number of journal papers Percapita scaled,34.24218123
+PRT,Number of journal papers Percapita scaled,27.82678428
+RUS,Number of journal papers Percapita scaled,1.555733761
+SGP,Number of journal papers Percapita scaled,100.0
+ZAF,Number of journal papers Percapita scaled,0.304731355
+ESP,Number of journal papers Percapita scaled,30.71371291
+SWE,Number of journal papers Percapita scaled,35.68564555
+CHE,Number of journal papers Percapita scaled,67.76263031
+ARE,Number of journal papers Percapita scaled,9.879711307
+GBR,Number of journal papers Percapita scaled,48.35605453
+USA,Number of journal papers Percapita scaled,38.89334403
+AUS,Number of Deep Learning papers Percapita scaled,43.07036728
+AUT,Number of Deep Learning papers Percapita scaled,20.97490587
+BEL,Number of Deep Learning papers Percapita scaled,8.82803869
+BRA,Number of Deep Learning papers Percapita scaled,0.623971321
+CAN,Number of Deep Learning papers Percapita scaled,23.90593646
+CHN,Number of Deep Learning papers Percapita scaled,2.994160485
+DNK,Number of Deep Learning papers Percapita scaled,15.98651726
+FIN,Number of Deep Learning papers Percapita scaled,6.066106013
+FRA,Number of Deep Learning papers Percapita scaled,9.532613352
+DEU,Number of Deep Learning papers Percapita scaled,16.97292179
+IND,Number of Deep Learning papers Percapita scaled,0.330868261
+IRL,Number of Deep Learning papers Percapita scaled,16.80382387
+ISR,Number of Deep Learning papers Percapita scaled,38.56108944
+ITA,Number of Deep Learning papers Percapita scaled,10.01172412
+JPN,Number of Deep Learning papers Percapita scaled,6.037923027000001
+NLD,Number of Deep Learning papers Percapita scaled,22.69406805
+NOR,Number of Deep Learning papers Percapita scaled,12.68910784
+PRT,Number of Deep Learning papers Percapita scaled,4.065113972
+RUS,Number of Deep Learning papers Percapita scaled,0.73106667
+SGP,Number of Deep Learning papers Percapita scaled,100.0
+ZAF,Number of Deep Learning papers Percapita scaled,0.58451514
+ESP,Number of Deep Learning papers Percapita scaled,8.038915068
+SWE,Number of Deep Learning papers Percapita scaled,18.21297319
+CHE,Number of Deep Learning papers Percapita scaled,75.48080175
+ARE,Number of Deep Learning papers Percapita scaled,4.036930986000001
+GBR,Number of Deep Learning papers Percapita scaled,25.34326878
+USA,Number of Deep Learning papers Percapita scaled,26.47058824
+AUS,Number of patents Percapita scaled,6.344086022000001
+AUT,Number of patents Percapita scaled,1.924731183
+BEL,Number of patents Percapita scaled,0.704301075
+BRA,Number of patents Percapita scaled,0.012849461999999999
+CAN,Number of patents Percapita scaled,41.66666667
+CHN,Number of patents Percapita scaled,0.8870967740000001
+DNK,Number of patents Percapita scaled,1.85483871
+FIN,Number of patents Percapita scaled,41.72043011
+FRA,Number of patents Percapita scaled,43.76344086
+DEU,Number of patents Percapita scaled,16.50537634
+IND,Number of patents Percapita scaled,0.138709677
+IRL,Number of patents Percapita scaled,2.2150537630000002
+ISR,Number of patents Percapita scaled,5.4301075270000005
+ITA,Number of patents Percapita scaled,9.892473118
+JPN,Number of patents Percapita scaled,30.05376344
+NLD,Number of patents Percapita scaled,4.161290323
+NOR,Number of patents Percapita scaled,1.5161290319999998
+PRT,Number of patents Percapita scaled,2.0913978490000003
+RUS,Number of patents Percapita scaled,0.634408602
+SGP,Number of patents Percapita scaled,20.48387097
+ZAF,Number of patents Percapita scaled,0.0
+ESP,Number of patents Percapita scaled,0.38333333299999994
+SWE,Number of patents Percapita scaled,6.075268817
+CHE,Number of patents Percapita scaled,29.56989247
+ARE,Number of patents Percapita scaled,22.31182796
+GBR,Number of patents Percapita scaled,15.16129032
+USA,Number of patents Percapita scaled,39.89247312
+AUS,Total Funding Amount Percapita scaled,4.39292484
+AUT,Total Funding Amount Percapita scaled,1.939993331
+BEL,Total Funding Amount Percapita scaled,1.1953741279999999
+BRA,Total Funding Amount Percapita scaled,0.009049316
+CAN,Total Funding Amount Percapita scaled,13.98872977
+CHN,Total Funding Amount Percapita scaled,7.838058827
+DNK,Total Funding Amount Percapita scaled,12.61845652
+FIN,Total Funding Amount Percapita scaled,2.632870509
+FRA,Total Funding Amount Percapita scaled,7.51860468
+DEU,Total Funding Amount Percapita scaled,3.422446847
+IND,Total Funding Amount Percapita scaled,0.12484666900000001
+IRL,Total Funding Amount Percapita scaled,12.31524183
+ISR,Total Funding Amount Percapita scaled,100.0
+ITA,Total Funding Amount Percapita scaled,0.373690864
+JPN,Total Funding Amount Percapita scaled,2.474944406
+NLD,Total Funding Amount Percapita scaled,1.695827669
+NOR,Total Funding Amount Percapita scaled,7.29501977
+PRT,Total Funding Amount Percapita scaled,0.82733096
+RUS,Total Funding Amount Percapita scaled,0.121580113
+SGP,Total Funding Amount Percapita scaled,43.56685854
+ZAF,Total Funding Amount Percapita scaled,0.12131227300000001
+ESP,Total Funding Amount Percapita scaled,1.7837968469999999
+SWE,Total Funding Amount Percapita scaled,10.45235501
+CHE,Total Funding Amount Percapita scaled,15.61516477
+ARE,Total Funding Amount Percapita scaled,3.915541094
+GBR,Total Funding Amount Percapita scaled,14.86836666
+USA,Total Funding Amount Percapita scaled,37.29367414
+AUS,Total Number of Startups Percapita scaled,8.016268197
+AUT,Total Number of Startups Percapita scaled,11.37380111
+BEL,Total Number of Startups Percapita scaled,5.450606256
+BRA,Total Number of Startups Percapita scaled,0.058915199999999994
+CAN,Total Number of Startups Percapita scaled,23.34689016
+CHN,Total Number of Startups Percapita scaled,1.2885324409999999
+DNK,Total Number of Startups Percapita scaled,13.02089272
+FIN,Total Number of Startups Percapita scaled,15.99832757
+FRA,Total Number of Startups Percapita scaled,11.05705272
+DEU,Total Number of Startups Percapita scaled,4.950143804
+IND,Total Number of Startups Percapita scaled,0.23059282600000003
+IRL,Total Number of Startups Percapita scaled,24.67723339
+ISR,Total Number of Startups Percapita scaled,100.0
+ITA,Total Number of Startups Percapita scaled,2.213437734
+JPN,Total Number of Startups Percapita scaled,5.513955934
+NLD,Total Number of Startups Percapita scaled,6.160122645
+NOR,Total Number of Startups Percapita scaled,15.42818047
+PRT,Total Number of Startups Percapita scaled,4.836114384
+RUS,Total Number of Startups Percapita scaled,0.38960051700000004
+SGP,Total Number of Startups Percapita scaled,52.74114055
+ZAF,Total Number of Startups Percapita scaled,0.455484182
+ESP,Total Number of Startups Percapita scaled,4.519365996
+SWE,Total Number of Startups Percapita scaled,24.17043597
+CHE,Total Number of Startups Percapita scaled,17.01192241
+ARE,Total Number of Startups Percapita scaled,5.171867675
+GBR,Total Number of Startups Percapita scaled,21.25635081
+USA,Total Number of Startups Percapita scaled,27.78136759
+AUS,AI hiring index scaled,77.76487094
+AUT,AI hiring index scaled,0.0
+BEL,AI hiring index scaled,47.467369700000006
+BRA,AI hiring index scaled,83.97421641
+CAN,AI hiring index scaled,70.37463938
+CHN,AI hiring index scaled,33.12219293
+DNK,AI hiring index scaled,55.51743559
+FIN,AI hiring index scaled,52.70236719
+FRA,AI hiring index scaled,54.91185638
+DEU,AI hiring index scaled,58.893613
+IND,AI hiring index scaled,73.1191459
+IRL,AI hiring index scaled,52.34091334
+ISR,AI hiring index scaled,55.17651733
+ITA,AI hiring index scaled,55.67817908
+JPN,AI hiring index scaled,0.0
+NLD,AI hiring index scaled,62.27934409
+NOR,AI hiring index scaled,0.0
+PRT,AI hiring index scaled,47.43644131
+RUS,AI hiring index scaled,0.0
+SGP,AI hiring index scaled,100.0
+ZAF,AI hiring index scaled,65.40400444
+ESP,AI hiring index scaled,55.19246873
+SWE,AI hiring index scaled,53.70715887
+CHE,AI hiring index scaled,51.95668336
+ARE,AI hiring index scaled,0.0
+GBR,AI hiring index scaled,56.66088183
+USA,AI hiring index scaled,64.65017554
+AUS,Count of conference citation scaled,1.604104914
+AUT,Count of conference citation scaled,0.240117568
+BEL,Count of conference citation scaled,0.21919446
+BRA,Count of conference citation scaled,0.144967245
+CAN,Count of conference citation scaled,1.854185867
+CHN,Count of conference citation scaled,6.6934017489999995
+DNK,Count of conference citation scaled,0.159912322
+FIN,Count of conference citation scaled,0.158417815
+FRA,Count of conference citation scaled,1.012778041
+DEU,Count of conference citation scaled,2.095797943
+IND,Count of conference citation scaled,0.7900963959999999
+IRL,Count of conference citation scaled,0.16589035300000002
+ISR,Count of conference citation scaled,0.436396244
+ITA,Count of conference citation scaled,0.938550826
+JPN,Count of conference citation scaled,1.0825217329999999
+NLD,Count of conference citation scaled,0.552469674
+NOR,Count of conference citation scaled,0.020923108
+PRT,Count of conference citation scaled,0.107106384
+RUS,Count of conference citation scaled,0.067751015
+SGP,Count of conference citation scaled,1.100455825
+ZAF,Count of conference citation scaled,0.0
+ESP,Count of conference citation scaled,0.731312427
+SWE,Count of conference citation scaled,0.194784168
+CHE,Count of conference citation scaled,1.24542307
+ARE,Count of conference citation scaled,0.0712382
+GBR,Count of conference citation scaled,3.3661294739999996
+USA,Count of conference citation scaled,20.97541535
+AUS,Count of citation references scaled,11.60676951
+AUT,Count of citation references scaled,1.517985355
+BEL,Count of citation references scaled,1.529654685
+BRA,Count of citation references scaled,5.296579266
+CAN,Count of citation references scaled,11.70660711
+CHN,Count of citation references scaled,75.51547645
+DNK,Count of citation references scaled,1.033708157
+FIN,Count of citation references scaled,1.4223616780000001
+FRA,Count of citation references scaled,10.19121494
+DEU,Count of citation references scaled,15.80708004
+IND,Count of citation references scaled,12.9691638
+IRL,Count of citation references scaled,0.762072084
+ISR,Count of citation references scaled,1.933543165
+ITA,Count of citation references scaled,8.095597745
+JPN,Count of citation references scaled,11.89590958
+NLD,Count of citation references scaled,3.2602811660000004
+NOR,Count of citation references scaled,0.7222018729999999
+PRT,Count of citation references scaled,1.6392167290000002
+RUS,Count of citation references scaled,0.7069669140000001
+SGP,Count of citation references scaled,6.061568682000001
+ZAF,Count of citation references scaled,0.0
+ESP,Count of citation references scaled,6.222670267000001
+SWE,Count of citation references scaled,1.5870288909999999
+CHE,Count of citation references scaled,5.246012169
+ARE,Count of citation references scaled,0.42463395600000003
+GBR,Count of citation references scaled,19.56622507
+USA,Count of citation references scaled,100.0
+AUS,Count of journal citation scaled,5.590189931
+AUT,Count of journal citation scaled,0.5465506179999999
+BEL,Count of journal citation scaled,0.732365723
+BRA,Count of journal citation scaled,0.761418247
+CAN,Count of journal citation scaled,4.089142829
+CHN,Count of journal citation scaled,27.69008219
+DNK,Count of journal citation scaled,0.32623564
+FIN,Count of journal citation scaled,0.38978803799999995
+FRA,Count of journal citation scaled,2.822331707
+DEU,Count of journal citation scaled,4.2247212769999996
+IND,Count of journal citation scaled,4.387536466999999
+IRL,Count of journal citation scaled,0.076262877
+ISR,Count of journal citation scaled,0.30686729
+ITA,Count of journal citation scaled,2.304228353
+JPN,Count of journal citation scaled,2.292123134
+NLD,Count of journal citation scaled,1.882361486
+NOR,Count of journal citation scaled,0.206393976
+PRT,Count of journal citation scaled,0.39039329899999997
+RUS,Count of journal citation scaled,0.205183455
+SGP,Count of journal citation scaled,2.731542568
+ZAF,Count of journal citation scaled,0.0
+ESP,Count of journal citation scaled,2.802963358
+SWE,Count of journal citation scaled,0.574392621
+CHE,Count of journal citation scaled,1.72196734
+ARE,Count of journal citation scaled,0.024815697999999997
+GBR,Count of journal citation scaled,9.676911717000001
+USA,Count of journal citation scaled,28.94176179
+AUS,Count of journal references scaled,15.10466241
+AUT,Count of journal references scaled,1.8830857330000002
+BEL,Count of journal references scaled,3.280170871
+BRA,Count of journal references scaled,4.335170985
+CAN,Count of journal references scaled,13.94191598
+CHN,Count of journal references scaled,100.0
+DNK,Count of journal references scaled,1.530721025
+FIN,Count of journal references scaled,1.9257273830000001
+FRA,Count of journal references scaled,11.7656689
+DEU,Count of journal references scaled,16.10026879
+IND,Count of journal references scaled,18.58395456
+IRL,Count of journal references scaled,0.7791619390000001
+ISR,Count of journal references scaled,2.032331508
+ITA,Count of journal references scaled,9.091428267000001
+JPN,Count of journal references scaled,8.103626825
+NLD,Count of journal references scaled,6.357984267999999
+NOR,Count of journal references scaled,1.05100246
+PRT,Count of journal references scaled,1.678063155
+RUS,Count of journal references scaled,1.390612745
+SGP,Count of journal references scaled,6.125929931
+ZAF,Count of journal references scaled,0.619446115
+ESP,Count of journal references scaled,10.86600623
+SWE,Count of journal references scaled,2.182909836
+CHE,Count of journal references scaled,5.018389212
+ARE,Count of journal references scaled,0.463727946
+GBR,Count of journal references scaled,27.38069856
+USA,Count of journal references scaled,87.86388176
+AUS,Number of AI occupational skills scaled,14.64968153
+AUT,Number of AI occupational skills scaled,0.0
+BEL,Number of AI occupational skills scaled,9.554140127
+BRA,Number of AI occupational skills scaled,14.01273885
+CAN,Number of AI occupational skills scaled,25.47770701
+CHN,Number of AI occupational skills scaled,36.30573248
+DNK,Number of AI occupational skills scaled,5.732484076
+FIN,Number of AI occupational skills scaled,7.006369427
+FRA,Number of AI occupational skills scaled,31.21019108
+DEU,Number of AI occupational skills scaled,0.0
+IND,Number of AI occupational skills scaled,98.72611465
+IRL,Number of AI occupational skills scaled,11.46496815
+ISR,Number of AI occupational skills scaled,20.38216561
+ITA,Number of AI occupational skills scaled,12.738853500000001
+JPN,Number of AI occupational skills scaled,0.0
+NLD,Number of AI occupational skills scaled,12.738853500000001
+NOR,Number of AI occupational skills scaled,5.732484076
+PRT,Number of AI occupational skills scaled,5.095541401
+RUS,Number of AI occupational skills scaled,0.0
+SGP,Number of AI occupational skills scaled,10.82802548
+ZAF,Number of AI occupational skills scaled,5.732484076
+ESP,Number of AI occupational skills scaled,24.20382166
+SWE,Number of AI occupational skills scaled,8.917197452
+CHE,Number of AI occupational skills scaled,15.92356688
+ARE,Number of AI occupational skills scaled,3.821656051
+GBR,Number of AI occupational skills scaled,33.75796178
+USA,Number of AI occupational skills scaled,100.0
+AUS,Count of patent citation scaled,2.249108112
+AUT,Count of patent citation scaled,0.0
+BEL,Count of patent citation scaled,0.0
+BRA,Count of patent citation scaled,0.0
+CAN,Count of patent citation scaled,0.201644176
+CHN,Count of patent citation scaled,0.155110904
+DNK,Count of patent citation scaled,0.0
+FIN,Count of patent citation scaled,0.01551109
+FRA,Count of patent citation scaled,0.34124398899999997
+DEU,Count of patent citation scaled,0.837598883
+IND,Count of patent citation scaled,0.031022181
+IRL,Count of patent citation scaled,0.0
+ISR,Count of patent citation scaled,0.0
+ITA,Count of patent citation scaled,0.217155266
+JPN,Count of patent citation scaled,0.666976888
+NLD,Count of patent citation scaled,0.0
+NOR,Count of patent citation scaled,0.0
+PRT,Count of patent citation scaled,0.0
+RUS,Count of patent citation scaled,0.01551109
+SGP,Count of patent citation scaled,0.0
+ZAF,Count of patent citation scaled,0.0
+ESP,Count of patent citation scaled,0.0
+SWE,Count of patent citation scaled,0.046533270999999994
+CHE,Count of patent citation scaled,0.01551109
+ARE,Count of patent citation scaled,0.031022181
+GBR,Count of patent citation scaled,0.077555452
+USA,Count of patent citation scaled,5.475414922000001
+AUS,Count of patent references scaled,0.411952339
+AUT,Count of patent references scaled,0.051494042000000004
+BEL,Count of patent references scaled,0.00858234
+BRA,Count of patent references scaled,0.0
+CAN,Count of patent references scaled,1.626353507
+CHN,Count of patent references scaled,0.566434467
+DNK,Count of patent references scaled,0.00858234
+FIN,Count of patent references scaled,0.22171046
+FRA,Count of patent references scaled,1.7507974419999999
+DEU,Count of patent references scaled,1.041323969
+IND,Count of patent references scaled,0.25317904199999997
+IRL,Count of patent references scaled,0.00858234
+ISR,Count of patent references scaled,0.020025461
+ITA,Count of patent references scaled,0.24316631100000002
+JPN,Count of patent references scaled,2.437384675
+NLD,Count of patent references scaled,0.041481312
+NOR,Count of patent references scaled,0.00286078
+PRT,Count of patent references scaled,0.038620532
+RUS,Count of patent references scaled,0.017164681
+SGP,Count of patent references scaled,0.090114574
+ZAF,Count of patent references scaled,0.0
+ESP,Count of patent references scaled,0.042911702
+SWE,Count of patent references scaled,0.11872237599999999
+CHE,Count of patent references scaled,0.38620531799999996
+ARE,Count of patent references scaled,0.49920613399999997
+GBR,Count of patent references scaled,0.8496517
+USA,Count of patent references scaled,18.37908198
+AUS,Percentile Rank scaled,59.3220353
+AUT,Percentile Rank scaled,89.8305059
+BEL,Percentile Rank scaled,91.5254235
+BRA,Percentile Rank scaled,35.5932206
+CAN,Percentile Rank scaled,55.9322059
+CHN,Percentile Rank scaled,83.05084709999998
+DNK,Percentile Rank scaled,76.27118829999999
+FIN,Percentile Rank scaled,100.0
+FRA,Percentile Rank scaled,64.4067824
+DEU,Percentile Rank scaled,94.91525290000001
+IND,Percentile Rank scaled,40.677964700000004
+IRL,Percentile Rank scaled,44.0677971
+ISR,Percentile Rank scaled,69.4915235
+ITA,Percentile Rank scaled,71.1864412
+JPN,Percentile Rank scaled,98.3050823
+NLD,Percentile Rank scaled,86.4406765
+NOR,Percentile Rank scaled,77.9661
+PRT,Percentile Rank scaled,49.1525412
+RUS,Percentile Rank scaled,54.2372882
+SGP,Percentile Rank scaled,93.22034120000001
+ZAF,Percentile Rank scaled,33.898305900000004
+ESP,Percentile Rank scaled,52.5423706
+SWE,Percentile Rank scaled,88.1355941
+CHE,Percentile Rank scaled,79.6610177
+ARE,Percentile Rank scaled,18.6440677
+GBR,Percentile Rank scaled,67.79661180000001
+USA,Percentile Rank scaled,81.35592940000001
+AUS,Proportion of female AI authors scaled,64.33759857
+AUT,Proportion of female AI authors scaled,61.02294986
+BEL,Proportion of female AI authors scaled,74.14352608
+BRA,Proportion of female AI authors scaled,60.63909981
+CAN,Proportion of female AI authors scaled,77.40170669
+CHN,Proportion of female AI authors scaled,0.0
+DNK,Proportion of female AI authors scaled,94.24902176
+FIN,Proportion of female AI authors scaled,42.58955749
+FRA,Proportion of female AI authors scaled,75.21605271
+DEU,Proportion of female AI authors scaled,59.61336095
+IND,Proportion of female AI authors scaled,65.19259259
+IRL,Proportion of female AI authors scaled,80.63261137
+ISR,Proportion of female AI authors scaled,68.33777218
+ITA,Proportion of female AI authors scaled,73.83511292
+JPN,Proportion of female AI authors scaled,23.50860399
+NLD,Proportion of female AI authors scaled,100.0
+NOR,Proportion of female AI authors scaled,0.0
+PRT,Proportion of female AI authors scaled,82.81641498
+RUS,Proportion of female AI authors scaled,0.0
+SGP,Proportion of female AI authors scaled,40.01320338
+ZAF,Proportion of female AI authors scaled,0.0
+ESP,Proportion of female AI authors scaled,79.88922431
+SWE,Proportion of female AI authors scaled,71.49384011
+CHE,Proportion of female AI authors scaled,58.90714914
+ARE,Proportion of female AI authors scaled,0.0
+GBR,Proportion of female AI authors scaled,71.78093144
+USA,Proportion of female AI authors scaled,64.72850941
+AUS,Proportion of female in AI workplace scaled,56.26590857
+AUT,Proportion of female in AI workplace scaled,0.0
+BEL,Proportion of female in AI workplace scaled,46.26804387
+BRA,Proportion of female in AI workplace scaled,0.0
+CAN,Proportion of female in AI workplace scaled,56.51875422
+CHN,Proportion of female in AI workplace scaled,0.0
+DNK,Proportion of female in AI workplace scaled,47.61359032
+FIN,Proportion of female in AI workplace scaled,0.0
+FRA,Proportion of female in AI workplace scaled,60.41771311
+DEU,Proportion of female in AI workplace scaled,46.46936454
+IND,Proportion of female in AI workplace scaled,59.57073924
+IRL,Proportion of female in AI workplace scaled,50.67029189
+ISR,Proportion of female in AI workplace scaled,55.77711208
+ITA,Proportion of female in AI workplace scaled,100.0
+JPN,Proportion of female in AI workplace scaled,0.0
+NLD,Proportion of female in AI workplace scaled,54.70196449
+NOR,Proportion of female in AI workplace scaled,56.30132315
+PRT,Proportion of female in AI workplace scaled,48.35362442
+RUS,Proportion of female in AI workplace scaled,0.0
+SGP,Proportion of female in AI workplace scaled,0.0
+ZAF,Proportion of female in AI workplace scaled,0.0
+ESP,Proportion of female in AI workplace scaled,52.18237709
+SWE,Proportion of female in AI workplace scaled,50.62436915
+CHE,Proportion of female in AI workplace scaled,55.25609670000001
+ARE,Proportion of female in AI workplace scaled,52.19791814
+GBR,Proportion of female in AI workplace scaled,52.03801936
+USA,Proportion of female in AI workplace scaled,63.31970117
+AUS,Revealed Comparative Advantage - Deep Learning Papers scaled,75.42708928
+AUT,Revealed Comparative Advantage - Deep Learning Papers scaled,41.50134822
+BEL,Revealed Comparative Advantage - Deep Learning Papers scaled,41.56157059
+BRA,Revealed Comparative Advantage - Deep Learning Papers scaled,44.27952598
+CAN,Revealed Comparative Advantage - Deep Learning Papers scaled,63.91511658
+CHN,Revealed Comparative Advantage - Deep Learning Papers scaled,100.0
+DNK,Revealed Comparative Advantage - Deep Learning Papers scaled,43.76815809
+FIN,Revealed Comparative Advantage - Deep Learning Papers scaled,15.8002684
+FRA,Revealed Comparative Advantage - Deep Learning Papers scaled,44.90144386
+DEU,Revealed Comparative Advantage - Deep Learning Papers scaled,53.83305156
+IND,Revealed Comparative Advantage - Deep Learning Papers scaled,66.03288755
+IRL,Revealed Comparative Advantage - Deep Learning Papers scaled,57.12692583
+ISR,Revealed Comparative Advantage - Deep Learning Papers scaled,52.58830244
+ITA,Revealed Comparative Advantage - Deep Learning Papers scaled,42.92548143
+JPN,Revealed Comparative Advantage - Deep Learning Papers scaled,65.78192189
+NLD,Revealed Comparative Advantage - Deep Learning Papers scaled,60.53723676
+NOR,Revealed Comparative Advantage - Deep Learning Papers scaled,42.23405441
+PRT,Revealed Comparative Advantage - Deep Learning Papers scaled,37.10511085
+RUS,Revealed Comparative Advantage - Deep Learning Papers scaled,38.28417833
+SGP,Revealed Comparative Advantage - Deep Learning Papers scaled,84.47542014
+ZAF,Revealed Comparative Advantage - Deep Learning Papers scaled,68.22357513
+ESP,Revealed Comparative Advantage - Deep Learning Papers scaled,49.48737537
+SWE,Revealed Comparative Advantage - Deep Learning Papers scaled,35.22100917
+CHE,Revealed Comparative Advantage - Deep Learning Papers scaled,75.44288644
+ARE,Revealed Comparative Advantage - Deep Learning Papers scaled,76.44921471
+GBR,Revealed Comparative Advantage - Deep Learning Papers scaled,59.37178894
+USA,Revealed Comparative Advantage - Deep Learning Papers scaled,68.04821449
+AUS,Share of total enrollment scaled,42.71533436
+AUT,Share of total enrollment scaled,67.01327072
+BEL,Share of total enrollment scaled,68.23311945
+BRA,Share of total enrollment scaled,18.67848113
+CAN,Share of total enrollment scaled,49.08423699
+CHN,Share of total enrollment scaled,79.43154789
+DNK,Share of total enrollment scaled,61.96287052
+FIN,Share of total enrollment scaled,100.0
+FRA,Share of total enrollment scaled,71.16332768
+DEU,Share of total enrollment scaled,94.98766749
+IND,Share of total enrollment scaled,81.62009433
+IRL,Share of total enrollment scaled,48.39561226
+ISR,Share of total enrollment scaled,81.66225725
+ITA,Share of total enrollment scaled,54.38960239
+JPN,Share of total enrollment scaled,84.02189305
+NLD,Share of total enrollment scaled,58.73992058
+NOR,Share of total enrollment scaled,75.68277793
+PRT,Share of total enrollment scaled,39.62356324
+RUS,Share of total enrollment scaled,61.72679007
+SGP,Share of total enrollment scaled,76.75920344
+ZAF,Share of total enrollment scaled,28.92719628
+ESP,Share of total enrollment scaled,34.75189162
+SWE,Share of total enrollment scaled,75.88237349
+CHE,Share of total enrollment scaled,75.97563876
+ARE,Share of total enrollment scaled,35.15989838
+GBR,Share of total enrollment scaled,56.94606207
+USA,Share of total enrollment scaled,62.45375421
+AUS,Skill Penetration Index scaled,23.86383082
+AUT,Skill Penetration Index scaled,0.0
+BEL,Skill Penetration Index scaled,21.73922964
+BRA,Skill Penetration Index scaled,21.80539764
+CAN,Skill Penetration Index scaled,31.96826978
+CHN,Skill Penetration Index scaled,59.67136561
+DNK,Skill Penetration Index scaled,18.50308214
+FIN,Skill Penetration Index scaled,25.29937216
+FRA,Skill Penetration Index scaled,34.31951538
+DEU,Skill Penetration Index scaled,0.0
+IND,Skill Penetration Index scaled,100.0
+IRL,Skill Penetration Index scaled,27.59433693
+ISR,Skill Penetration Index scaled,46.88573091
+ITA,Skill Penetration Index scaled,18.17832656
+JPN,Skill Penetration Index scaled,0.0
+NLD,Skill Penetration Index scaled,22.58534341
+NOR,Skill Penetration Index scaled,19.84925865
+PRT,Skill Penetration Index scaled,15.08820498
+RUS,Skill Penetration Index scaled,0.0
+SGP,Skill Penetration Index scaled,32.26488495
+ZAF,Skill Penetration Index scaled,13.72871881
+ESP,Skill Penetration Index scaled,34.00464697
+SWE,Skill Penetration Index scaled,21.34488358
+CHE,Skill Penetration Index scaled,25.983868700000002
+ARE,Skill Penetration Index scaled,15.086303599999999
+GBR,Skill Penetration Index scaled,34.73287523
+USA,Skill Penetration Index scaled,75.62279678
+AUS,Total number of hires on LinkedIn scaled,5.904071833
+AUT,Total number of hires on LinkedIn scaled,0.0
+BEL,Total number of hires on LinkedIn scaled,1.962245835
+BRA,Total number of hires on LinkedIn scaled,5.260968296000001
+CAN,Total number of hires on LinkedIn scaled,12.02828962
+CHN,Total number of hires on LinkedIn scaled,3.811818544
+DNK,Total number of hires on LinkedIn scaled,2.374802822
+FIN,Total number of hires on LinkedIn scaled,1.8755741999999997
+FRA,Total number of hires on LinkedIn scaled,11.29158072
+DEU,Total number of hires on LinkedIn scaled,11.45972369
+IND,Total number of hires on LinkedIn scaled,50.69250637
+IRL,Total number of hires on LinkedIn scaled,2.241328503
+ISR,Total number of hires on LinkedIn scaled,2.4857425159999997
+ITA,Total number of hires on LinkedIn scaled,4.8605453380000005
+JPN,Total number of hires on LinkedIn scaled,0.0
+NLD,Total number of hires on LinkedIn scaled,5.938740488
+NOR,Total number of hires on LinkedIn scaled,0.0
+PRT,Total number of hires on LinkedIn scaled,1.561822878
+RUS,Total number of hires on LinkedIn scaled,0.0
+SGP,Total number of hires on LinkedIn scaled,3.076843072
+ZAF,Total number of hires on LinkedIn scaled,0.951654562
+ESP,Total number of hires on LinkedIn scaled,6.912929675
+SWE,Total number of hires on LinkedIn scaled,3.319523653
+CHE,Total number of hires on LinkedIn scaled,3.156580977
+ARE,Total number of hires on LinkedIn scaled,0.0
+GBR,Total number of hires on LinkedIn scaled,14.87805301
+USA,Total number of hires on LinkedIn scaled,100.0
