@@ -1,7 +1,9 @@
 body {
     padding-top:60px;
- 
+    font-family: europa, sans-serif;
+    font-weight:300; 
 }
+
 
 
 /* choose a light or dark theme to add to the body tag. */
@@ -19,7 +21,6 @@ body {
 }
 
 .input-annotation{
-    font-family: 'Lora';
     font-style: italic;
     font-size: 14px;
     padding: 2px 2px 2px 2px;
@@ -28,18 +29,22 @@ body {
     position:relative;
 }
 
+.switch-label{
+    font-style: italic;
+    font-size: 14px;
+    text-align:center;
+}
+
 .header {
 }
 
 
 .headline {
-    font-family: 'Roboto Condensed';
-    font-size: 65px;
+    font-size: 40px;
     font-weight: 700;
 }
 
 .body-text {
-    font-family: "Lora";
     font-size: 14px;
     line-height: 27px;
     letter-spacing: 0em;
@@ -48,9 +53,6 @@ body {
     text-transform: none;
     padding-bottom: 0;
     padding-top: 0;
-    font-style: normal;
-    font-weight: 300;
-
 }
 
 /* The switch - the box around the slider */
@@ -120,14 +122,20 @@ body {
     display:none;
 }
 
+.filters-and-weights {
+  justify-content: center
+}
+
 .filters-and-weights > div{
     display:inline-block;
-    max-width:25%;
-    margin: 5%;
+    width:25%;
+    margin: 3%;
 }
 
 .primary-weight{
-    background-color: white
+    background-color: white;
+    text-align: center;
+    font-size:24px;
 }
 
 .research-weights {
@@ -144,6 +152,7 @@ body {
     float:center;
     background-color: black;
     color:white;
+
 }
 
 .economy-weights > span{
@@ -162,7 +171,7 @@ body {
 
 
 .weight-label {
-    font-size:12px;
+    font-size:14px;
     text-align: center;
 }
 
@@ -177,7 +186,11 @@ body {
 .update-click{
     background-color: #f7b14d;
     color:#1351b5;
-    padding:10px
+    padding:10px;
+    cursor:pointer;
+    margin: auto;
+    max-width: 10%;
+    margin-bottom:3%;
 }
 
 .weight{
@@ -189,8 +202,89 @@ body {
 
 .chart-title{
     font-size:24px;
-    font-family: 'Roboto Condensed';
+    font-family: 'Europa';
 }
+
+.radar-axis-labels{
+  transform: translate(-5px, 0px)
+}
+
+.radar{
+}
+
+#radar-title{
+  font-size:20px;
+}
+
+.priorities{
+}
+
+#priorities-title{
+  font-size:20px;
+}
+
+#trendline-title{
+  font-size:20px;
+}
+
+/*grid*/
+
+.grid-container {
+  display: flex;
+  height: 85vh;
+  text-align: center;
+  justify-content: center
+}
+
+.main {
+  width:100%;
+  position:absolute;
+  left:9.5%;
+}
+
+
+.main-cards {
+    column-count: 2;
+    column-gap: 10px;
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    -webkit-column-break-inside: avoid;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  /* Force varying heights to simulate dynamic content */
+  .card:first-child {
+    height: 100%;
+    max-width:60%;
+    min-width:500px;
+  }
+  .card:nth-child(2) {
+    height: 50%;
+    width:60%;
+    min-width:500px;
+  }
+  .card:nth-child(3) {
+    height: 50%;
+    max-width:140%;
+    right:40%;
+    min-width:820px;
+  }
+
+  .chart-container {
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 12px 0px 0px 12px;
+    box-sizing: border-box;
+  }
 
 
 

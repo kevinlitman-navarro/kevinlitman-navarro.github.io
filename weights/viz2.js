@@ -12,6 +12,36 @@
   return row.code == code
 }
 
+  const countryNames = { 
+    'AUS':'Australia', 
+    'AUT':'Austria', 
+    'BEL': 'Belgium',
+    'BRA': 'Brazil',  
+    'CAN': 'Canada',
+    'CHN': 'China',
+    'DNK': 'Denmark',
+    'FIN': 'Finland',
+    'FRA': 'France',
+    'DEU': 'Germany',
+    'IND': 'India',
+    'IRL': 'Ireland',
+    'ISR': 'Israel',
+    'ITA': 'Italy',
+    'JPN':'Japan',
+    'NLD':'Netherlands',
+    'NOR':'Norway',
+    'PRT':'Portugal',
+    'RUS':'Russia',
+    'SGP':'Singapore',
+    'ZAF':'South Africa',
+    'ESP':'Spain',
+    'SWE':'Sweden',
+    'CHE':'Switzerland',
+    'ARE':'United Arab Emirates', 
+    'GBR':'United Kingdom',
+    'USA':'United States of America'
+  }
+
 
 
   //naming features
@@ -27,7 +57,7 @@
   var economy = (skills.concat(investment)).concat(labor)
   var gender_diversity = ['Proportion of female AI authors scaled','Proportion of female in AI workplace scaled']
   var inclusion = gender_diversity
-  var features = economy.concat(research_and_development).concat(inclusion)
+  var features = (inclusion.reverse()).concat(economy.reverse()).concat(research_and_development.reverse())
 
   //taking inputs
   var selected = features
@@ -130,13 +160,13 @@
 
   //make svg
 
-  const height = 700 
-  const width = 875
+  const height = 600 
+  const width = 800
   const margin = ({top: 30, right: 10, bottom: 40, left: 60})
 
   const svg = d3.select('.chart.comparison').append('svg')
-          .attr('height',height-margin.top-margin.bottom)
-          .attr('width',width-margin.left-margin.right)    
+          .attr('height',height)
+          .attr('width',width)    
 
   //define the data
   var filteredData = rawData.filter(row => isYear(row,years)).filter(row => isIncome(row,incomes))
@@ -254,8 +284,13 @@
   
   var y = d3.scaleBand() 
     .domain(weightedNodes.map(d => d.code))
-    .range([margin.top, height - margin.bottom])
+    .range([0 + margin.top, height - margin.bottom])
     .padding(0.1)
+
+  // var yScale = d3.scaleBand()
+  //   .domain(singleCountry.map((d => d.metrics)))
+  //   .range([0 + margin.top, height - margin.bottom])
+  //   .padding(.05)
 
   var z = d3.scaleOrdinal()
     .domain(['economy_mean_portion','research_and_development_mean_portion','inclusion_mean_portion'])
@@ -265,13 +300,13 @@
     .attr("transform", `translate(0,${margin.top})`)
     .call(d3.axisTop(x).ticks(width / 100, "s"))
     .call(g => g.selectAll(".domain").remove())
-    .style("font", "20px sans-serif")
+    .style("font", "10px sans-serif")
   
   var yAxis = g => g
     .attr("transform", `translate(${margin.left},0)`)
     .call(d3.axisLeft(y).tickSizeOuter(0))
     .call(g => g.selectAll(".domain").remove())
-    .style("font", "20px sans-serif")
+    .style("font", "14px sans-serif")
   
   svg.append("g")
     .selectAll("g")
@@ -309,12 +344,14 @@ function buildHeatmap(rawData) {
   var codes = rawData.map(d => d.code)
   var columns = [...new Set(codes)]
   var rows = selected
+  console.log(selected)
   
   var tip = d3.tip()
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return "<strong class='trend-country-name'>" + d.code + "</strong>" + "<span class='super-font'>" + "<br>" + "&mdash;&mdash;&mdash;&mdash;<br>" + d.metrics  + ": " + (d.index_score*1).toFixed(2) + "</span>"
+      if (d.index_score > 0) {return "<strong class='trend-country-name'>" + countryNames[d.code] + "</strong>" + "<span class='super-font'>" + "<br>" + "&mdash;&mdash;&mdash;&mdash;<br>" + d.metrics  + ": " + (d.index_score*1).toFixed(2) + "</span>"}
+      else {return "<strong class='trend-country-name'>" + countryNames[d.code] + "</strong>" + "<span class='super-font'>" + "<br>" + "&mdash;&mdash;&mdash;&mdash;<br>" + d.metrics  + ": No data available</span>"}
     }) 
   
   
@@ -329,8 +366,8 @@ function buildHeatmap(rawData) {
     .padding(.1)
   
   var colorScale = d3.scaleLinear()
-    .domain([0,1,50,100])
-    .range(["#ffffff","#FFFFDD", "#3E9583", "#1F2D86"])
+    .domain([0.01,50,100])
+    .range(["#FFFFDD", "#3E9583", "#1F2D86"])
    
   var xAxis = g => g
     .attr("transform", `translate(0,${margin.top})`)
@@ -360,9 +397,13 @@ function buildHeatmap(rawData) {
     .attr("width", yScale.bandwidth())
     .attr("height", xScale.bandwidth())
     .attr('opacity',1)
-    .attr('fill',function (d) {return colorScale(d.index_score)})
+    .attr('fill',function (d) {
+      if (d.index_score > 0) {return colorScale(d.index_score)}
+      else {return '#333333'}
+    })
     .on('mouseover',tip.show)
     .on('mouseout',tip.hide)
+
   
   //Extra scale since the color scale is interpolated
 var countScale = d3.scaleLinear()
@@ -439,14 +480,17 @@ legendsvg.append("g")
   .attr("transform", "translate(0," + (height-margin.bottom-20) + ")")
   .call(xAxis);
 
+//add in category annotations
+
+
 }
 
 
 
 function buildTrendline(rawData) {
   //make svg
-  const width = 600
-  const height = 400
+  const width = 475
+  const height = 300
   const margin = ({top: 10, right: 50, bottom: 20, left: 50})
   const svg = d3.select('.chart.trendline').append('svg')
           .attr('height',height)
@@ -628,6 +672,7 @@ function buildTrendline(rawData) {
 var xAxis = d3.axisBottom(xPositionScale)
       .tickSize(0)
       .ticks(4)
+      .tickFormat(d3.format("d"))
     svg.append("g")
       .attr("class", "axis x-axis")
       .style('fill', '#333333')
@@ -647,12 +692,12 @@ var xAxis = d3.axisBottom(xPositionScale)
 
 function buildRadar(rawData) {
   //make svg
-  const width = 600
-  const height = 600
+  const width = 400
+  const height = 400
   const svg = d3.select('.chart.radar').append('svg')
           .attr('height',height)
           .attr('width',width)
-          .style('background-color','#f5f5f5')
+          .style('background-color','#ffffff')
 
   var axesDomain = ['Research','Inclusion','Economy']
   var mean_names = ['economy_mean','research_and_development_mean','inclusion_mean']
@@ -686,7 +731,7 @@ function buildRadar(rawData) {
     .range([0, radius])
 
   var color = d3.scaleOrdinal()
-    .range(["#333333","#00A0B0"])
+    .range(["#b08500","#00A0B0"])
 
   
   //define the data
@@ -761,6 +806,11 @@ function buildRadar(rawData) {
 
   var singleCountry = filteredNodes.filter(row => isCountry(row,selectedCountry))
   console.log(singleCountry[0]['income group'])
+
+//set title 
+  var headline = d3.select('#radar-title')
+    .html('AI Vibrancy in '+ "<font style=color:#00A0B0>" + countryNames[selectedCountry]  + '</font> vs. Average AI Vibrancy Scores in <font style=color:#b08500;text-transform:capitalize>' + singleCountry[0]['income group'] + '</font>' + ' Countries')
+
   var sameIncome = filteredNodes.filter(row => isIncome(row,[singleCountry[0]['income group']]))
   console.log(d3.mean(sameIncome.map(d=>d.economy_mean)))
   
@@ -818,6 +868,7 @@ function buildRadar(rawData) {
   levelText = levels.append('text')
       .text(function (d,i) {return labels[i]})
       .attr("y", (d, i) => radius/axisCircles*d)
+      .attr('class','radar-axis-labels')
 
   const axis = axisGrid.selectAll(".axis")
     .data(axesDomain)
@@ -884,7 +935,10 @@ function buildPriorities(rawData) {
 
   var selectedCountry = document.getElementsByClassName('country-select')[0].value
   var singleCountry = rawData.filter(row => isCountry(row,selectedCountry)).sort((b, a) => d3.ascending(+a.index_score,+b.index_score))
-  
+
+  var headline = d3.select('#priorities-title')
+    .html(countryNames[selectedCountry] + "'s Policy Priorities: AI Vibrancy in <font style='color:#38735D'>Research and Development</font>, <font style='color:#2976A6'>Economy</font>, and <font style='color:#F28F38'>Inclusion</font>")
+
   
   var yScale = d3.scaleBand()
     .domain(singleCountry.map((d => d.metrics)))

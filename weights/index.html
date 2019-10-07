@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="d3-tip.css">
     <link rel="stylesheet" href="style/app.css">
 
+    <link rel="stylesheet" href="https://use.typekit.net/nah6jff.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
-    <title>Opinion | Privacy Policies Are Criminally Inscrutable</title>
+    <title>AI Vibrancy Index: Composite Measures</title>
 
   </head>
 <body class='light-theme'>
@@ -19,17 +20,16 @@
 
   <div class="header col-md-14 text-center"><!-- headline and intro -->
       <h1 class="text-center headline">AI Vibrancy Index: Composite Measures</h1>
-      <span id='cross-label'>Cross-country comparison</span>
+      <span class='switch-label'>Cross-country comparison</span>
       <label class="switch">
         <input type="checkbox" onclick="toggle()" id="toggleSwitch">
         <span class="slider round"></span>
       </label>
-      <span id='single-label'>Single-country deep dive</span>
+      <span class='switch-label'>Single-country deep dive</span>
   </div>
 
   <div class='cross-country col-md-14'>
-    <p class='text-center'>Drag the sliders to change the weight for that variable, then click update to see the new weights reflected in the chart below.</p>
-    <p class='update-click text-center' onclick="updateCrossCountry()">Update</p>
+    <p class='text-center'>Drag the sliders to change the weight for a variable, then click update to see the new weights reflected in the chart below.</p>
     <div class='filters-and-weights row'>
 
       <div class='research-weights'>
@@ -92,19 +92,25 @@
 
       </div>
     </div>
+    <p class='update-click text-center' onclick="updateCrossCountry()">Update</p>
 
+    <div class='chart-container'>
     <div class="chart-title col-md-14">
-      <h1 >Cross-country AI Vibrancy in Three Pillars: <font style='color:#38735D'>Research and Development,</font> <font style='color:#2976A6'>Economy</font>, and <font style='color:#F28F38'>Inclusion</font></h1>
+      <h1 class='chart-title'>Cross-country AI Vibrancy in Three Pillars: <font style='color:#38735D'>Research and Development,</font> <font style='color:#2976A6'>Economy</font>, and <font style='color:#F28F38'>Inclusion</font></h1>
     </div>
     <div class='chart comparison col-md-14'>
     </div>
+    </div>
     <br><br>
 
+    <div class='chart-container'>
     <div class="chart-title col-md-14">
-      <h1>Cross-country AI Vibrancy in 21 Variables</h1>
+      <h1 class='chart-title'>Cross-country AI Vibrancy in 21 Variables</h1>
     </div>
     <div class='chart heatmap col-md-14'>
     </div>
+    </div>
+    <br><br><br>
 
   </div>
 
@@ -141,28 +147,40 @@
     </select>
 
 
-    <div class="chart-title col-md-14">
-      <h1><font style='color:#00A0B0'>Index Scores by Domain</font> vs. Average Index Scores for Countries With Similar Economic Footprint</h1>
-    </div>
-    <div class='chart radar col-md-14'>
-    </div>
+    <div class='grid-container'>
+      <main class='main'>
+      <div class="main-cards">
 
-    <div class='chart table col-md-14'>
-    </div>
+        <div class="card">
+        <div class="chart-title">
+          <h1 id='radar-title'></h1>
+        </div>
+        <div class='chart radar'>
+        </div>
+        </div>
 
-    <div class="chart-title col-md-14">
-      <h1>Setting Policy Priorities: AI Vibrancy in <font style='color:#38735D'>Research and Development,</font> <font style='color:#2976A6'>Economy</font>, and <font style='color:#F28F38'>Inclusion</font></h1>
-    </div>
-    <div class='chart priorities col-md-14'>
-    </div>
+        <div class="card">
+        <div class="chart-title">
+          <h1 id='trendline-title'>Setting Trends: AI Vibrancy Changes 2015-2018</h1>
+        </div>
+        <div class='chart trendline'>
+        </div>
+        </div>
 
+        <div class="card">
+        <div class="chart-title">
+          <h1 id='priorities-title'></h1>
+        </div>
+        <div class='chart priorities'>
+        </div>
+        </div>
 
-    <div class="chart-title col-md-14">
-      <h1>Setting Trends: AI Vibrancy Changes 2015-2018</h1>
-    </div>
-    <div class='chart trendline col-md-14'>
-    </div>
+      </div>
+      </main>
+
   </div>
+
+</div>
 
 
       
