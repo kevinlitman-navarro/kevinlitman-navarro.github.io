@@ -1,328 +1,332 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-      
-    <!-- Your CSS files -->
-    <link rel="stylesheet" href="style/app.css">
-    
-    <!-- google fonts: Roboto Condensed(super-font) and Lora(sub-font) -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
-    <link rel="icon" href="style/images/website_icon.ico" sizes="16x16" type="image/ico">
-  
-      
-      
-    <title>Kevin Litman-Navarro</title>
-
-  </head>
-    
-  <body class="light-theme">
-    <div class="container"><!-- start of the main container-->
-        <div class="row justify-content-center"><!-- headline and intro -->
-            <div class="col-md-10 ">
-                <h1 class="headline super-font">Kevin Litman-Navarro</h1>
-                <!-- put your twitter page here: -->
-                <a class="handle super-font" href="https://twitter.com/kevselfpromotes?lang=en">@kevselfpromotes</a>
-            </div>
-        </div>
-        <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
-            <div class="col-md-10">
-                <p class="section super-font">About me</p>
-                <p class="body-text sub-font">
-                I'm a writer and journalist-engineer at <a href='pudding.cool'>The Pudding</a> and <a href='polygraph.cool'>Polygraph</a>. Check out some of my visual work and writing below, and contact me at kevin.litnav @ gmail.com if you wanna chat.
-                </p>
-            </div>
-        </div>
-    </div><!-- container-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYT Survey</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
         
-
-<div class="container"> 
-    
-        <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
-            <div class="col-md-10">
-                <p class="section super-font">Selected Data Stories</p>
-            </div>
-        </div>
+        .tweet-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
         
+        .tweet {
+            position: absolute;
+            width: 280px;
+            height: auto;
+            min-height: 120px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0.8; /* Fixed opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e1e8ed;
+            padding: 10px;
+            font-size: 14px;
+            text-align: left;
+            color: #292f33;
+            animation-name: floatTweet;
+            animation-duration: 18s; /* Faster animation - 12 seconds instead of 25 */
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+        
+        @keyframes floatTweet {
+            0% {
+                transform: translateY(100px) rotate(var(--rotation));
+                opacity: 0.2;
+            }
+            25% {
+                transform: translateY(-300px) rotate(var(--rotation));
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-700px) rotate(var(--rotation));
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(-1100px) rotate(var(--rotation));
+                opacity: 0.8;
+            }   
+            100% {
+                transform: translateY(-1500px) rotate(var(--rotation));
+                opacity: 0.2;
+            }
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ebebeb;
+            padding-bottom: 15px;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .option-button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+        
+        .woke-button {
+            background-color: #6b5b95;
+            color: white;
+        }
+        
+        .woke-button:hover {
+            background-color: #5a4a84;
+        }
+        
+        .corporate-button {
+            background-color: #d64161;
+            color: white;
+        }
+        
+        .corporate-button:hover {
+            background-color: #c53050;
+        }
 
-        <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://pudding.cool/2019/10/slang/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/ass_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Is "Ass" The Most Complicated Word in English?</p>
-                    <p class="sub-font explanation">A Visual Investigation for <i>The Pudding</i></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
+        .kevin-button {
+            background-color: #b71fad;
+            color: white;
+        }   
 
-<!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://www.nytimes.com/interactive/2019/06/12/opinion/facebook-google-privacy-policies.html" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/privacy_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">We Read 150 Privacy Policies. They Were An Incomprehensible Disaster</p>
-                    <p class="sub-font explanation">A Visual Op-ed for <i>The New York Times</i></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-    <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="tabs-mockup/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/tabs_mock_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">The Ultimate Ultimate Guitar Story</p>
-                    <p class="sub-font explanation">A story about guitar players and the songs they love</p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
- <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="ufos/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/ufos_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Close-ish Encounters</p>
-                    <p class="sub-font explanation">Thought the word cloud was played out? Think again.</p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-<!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="nba/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/nba_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Keeping The Team Together</p>
-                    <p class="sub-font explanation">A look at how NBA team continuity translates to success</p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-<!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="refugees/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/refugees_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Death After The Mediterranean</p>
-                    <p class="sub-font explanation">An investigation of refugee deaths in Europe</p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-<br><br>
-
-<div class="row justify-content-center"> <!-- this is the subhead for the stories -->
-            <div class="col-md-10">
-                <p class="section super-font">In-progress Projects</p>
-            </div>
+        .kevin-button:hover {
+            background-color: #b71fad;
+        }
+        
+        
+        @media (min-width: 768px) {
+            .button-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tweet-container" id="tweet-container">
+        <!-- Tweet images will be added here dynamically -->
+    </div>
+    
+    <div class="container">
+        <h1>Why are you mad at the New York Times?</h1>
+        <div class="button-container">
+            <button class="option-button woke-button" id="woke-button">Because Woke</button>
+            <button class="option-button corporate-button" id="corporate-button">Because Capitalism</button>
+            <button class="option-button kevin-button" id="kevin-button">Because Kevin Litman-Navarro isn't a columnist</button>
         </div>
+    </div>
 
-<!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="philosophy-mockup/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/philosophy_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">What is Philosophy?</p>
-                    <p class="sub-font explanation">A visual attempt to define the notoriously nebulous discipline</p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-  
-
-<br><br>
-
-<div class="row justify-content-center"> <!-- this is the subhead for the stories -->
-            <div class="col-md-10">
-                <p class="section super-font">Something Interactive</p>
-            </div>
-        </div>
-
-
-<!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="gofundme/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/gofundme_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">3,000 GoFundMe Campaigns, Mapped</p>
-                    <p class="sub-font explanation">Created using Selenium, BeautifulSoup, Pandas/Python, and Leaflet</p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-<br><br>
-
-
-
-<div class="row justify-content-center"> <!-- this is the subhead for the stories -->
-            <div class="col-md-10">
-                <p class="section super-font">Selected Writing</p>
-            </div>
-        </div>
-
- <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://ideas.ted.com/can-you-teach-a-computer-to-be-funny/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="https://tedideas.files.wordpress.com/2017/11/featured_art_rachel_denti.gif?w=750" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Can You Teach A Computer To Be Funny?</p>
-                    <p class="body-text sub-font"></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-<!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://theoutline.com/post/6584/ani-liu-microbial-self-portrait" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="style/images/microbe_thumbnail.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Portrait of the Artist as a Microbial Growth</p>
-                    <p class="body-text sub-font"></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
- <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://daily.jstor.org/radical-questions-am-i-my-memories/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="https://daily.jstor.org/wp-content/uploads/2017/11/white_bear_1050x700.jpg" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Am I My Memories?</p>
-                    <p class="body-text sub-font"></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
- <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://www.atlasobscura.com/articles/shark-illustrations-aaron-john-gregory" alt="image description" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="https://assets.atlasobscura.com/article_images/45639/image.jpg" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">The Delicate Art of Illustrating Ancient Sharks</p>
-                    <p class="body-text sub-font"></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
- <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="https://daily.jstor.org/wittgenstein-whether-speech-violence/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="https://daily.jstor.org/wp-content/uploads/2017/08/wittgenstein_2.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Can Speech Be Violence?</p>
-                    <p class="body-text sub-font"></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
- <!-- start of story with an image -->
-        <!-- put the link here -->
-        <a class="link" href="http://blog.lareviewofbooks.org/reviews/dont-panic-coping-internet-age-ignorance/" class="teaser-anchor">
-            <div class="row justify-content-center "> 
-                <div class="col-md-4"><!-- image -->
-                    <img class="image " src="http://blog.lareviewofbooks.org/wp-content/uploads/2017/06/hgtg.png" alt="image description">
-                </div>
-                <div class="col-md-6 "><!-- headline/description -->
-                    <p class="subhead super-font">Don't Panic! Coping With The Internet Age Through Ignorance</p>
-                    <p class="body-text sub-font"></p>
-                </div>
-            </div>
-    </a>
-<!-- end of story with an image -->
-
-
-
-
-
-
-</div><!-- end of container with stories-->
-      
-      
-<div class="container">            
-        <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
-            <div class="col-md-10">
-                <p class="body-text sub-font">
-                <br><br>
-                If you want to see more clips: my full column at <a href='https://daily.jstor.org/column/radical-questions/'>JSTOR Daily</a>; more articles for <a href='https://www.atlasobscura.com/users/kevinlitmannavarro?view=articles'>Atlas Obscura</a>; all sorts of stories at <a href='https://theoutline.com/contributor/449/kevin-litman-navarro'>The Outline</a>.
-                </p>
-            </div>
-        </div>
-    </div><!-- container-->
+    <script>
+        // Tweet animation background elements defined first
+        // Sample tweet texts criticizing NYT for being too leftist
+        const leftistCritiques = [
+            "NYT pushing their leftist agenda again with today's headline #bias",
+            "When did @nytimes become an activist organization instead of a newspaper?",
+            "Another day, another progressive talking point on the NYT front page",
+            "The amount of woke buzzwords in today's NYT headline is just embarrassing",
+            "Does anyone at the NYT editorial board even talk to conservatives anymore?",
+            "NYT headline might as well say 'we hate traditional values' at this point",
+            "Predictable leftist slant from @nytimes covering the latest policy debate",
+            "Can someone remind NYT that half the country doesn't share their progressive worldview?"
+        ];
+        
+        // Sample tweet texts criticizing NYT for being too conservative
+        const conservativeCritiques = [
+            "NYT headline totally missing the systemic issues as usual #corporatemedia",
+            "Are we surprised @nytimes is catering to their corporate advertisers again?",
+            "Their centrist 'both sides' approach to this headline is harmful, actually",
+            "NYT headline shows they're still protecting the wealthy establishment",
+            "When will the Times stop giving platform to these regressive viewpoints?",
+            "Another day, another NYT headline that ignores marginalized perspectives",
+            "The conservative bias in today's @nytimes coverage is showing",
+            "NYT headline acts like protecting corporate interests is 'neutral journalism'"
+        ];
+        
+        // Your custom tweet screenshot images (add your actual image paths here)
+        const tweetImages = [
+            // Add paths to your actual tweet screenshots here
+            // For example: './images/tweet1.jpg', './images/tweet2.png', etc.
+            // Leave this array empty if you don't have images yet
+            'tweet1.png',
+            'tweet2.png'
             
-    
+        ];
         
-        
-        
-        
-        
-      <!-- end of the main container-->
-   
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Immediately create tweets on page load
+            createTweets();
+            
+            // Add event listeners to buttons
+            document.getElementById('woke-button').addEventListener('click', function() {
+                window.location.href = './nytimes_versions/nytimes-far-right-static-v3.html';
+            });
+            
+                document.getElementById('corporate-button').addEventListener('click', function() {
+                    window.location.href = './nytimes_versions/nytimes-far-left-static-v3.html';
+                });
 
-      
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
+            document.getElementById('kevin-button').addEventListener('click', function() {
+                window.location.href = './nytimes_versions/kevin.html';
+            });
+            
+            // Add some animation to buttons on hover
+            const buttons = document.querySelectorAll('.option-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseout', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+                
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'translateY(1px)';
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+            });
+            
+            // Tweet animation background
+            const tweetContainer = document.getElementById('tweet-container');
+        });
+        
+        // Define tweet creation functions outside of DOMContentLoaded to avoid reference errors
+        function createTweets() {
+            // Create first batch immediately
+            for (let i = 0; i < 12; i++) {
+                createTweet();
+            }
+            
+            // Create second batch after a short delay
+            setTimeout(() => {
+                for (let i = 0; i < 12; i++) {
+                    createTweet();
+                }
+            }, 100);
+        }
+        
+        function createTweet() {
+            const tweetContainer = document.getElementById('tweet-container');
+            // Decide whether to use an image or HTML tweet
+            // If you have images and we randomly select to use one (50% chance by default)
+            const useImage = tweetImages.length > 0 && Math.random() < 0.5;
+            
+            let tweet;
+            
+            if (useImage) {
+                // Create an image tweet
+                tweet = document.createElement('img');
+                tweet.className = 'tweet';
+                
+                // Get random tweet image
+                const randomIndex = Math.floor(Math.random() * tweetImages.length);
+                tweet.src = tweetImages[randomIndex];
+                tweet.alt = "Tweet screenshot";
+            } else {
+                // Create an HTML tweet
+                tweet = document.createElement('div');
+                tweet.className = 'tweet';
+                
+                // Randomly choose between leftist and conservative critiques
+                const useLeftistCritique = Math.random() < 0.5;
+                const contentArray = useLeftistCritique ? leftistCritiques : conservativeCritiques;
+                const randomIndex = Math.floor(Math.random() * contentArray.length);
+                
+                // Generate random user names that sound like Twitter users
+                const firstNames = ["Real", "American", "Truth", "News", "Free", "Liberty", "Patriot", "Progressive", "Liberal", "Conservative"];
+                const lastNames = ["Patriot", "Thinker", "Voice", "Watcher", "Defender", "Resister", "American", "Parent", "Voter", "Citizen"];
+                const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+                const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+                const username = randomFirstName + randomLastName;
+                const handle = "@" + username.toLowerCase() + Math.floor(Math.random() * 1000);
+                
+                // Determine profile color based on political leaning
+                const profileColor = useLeftistCritique ? "#d64161" : "#6b5b95";
+                
+                // Create tweet content with Twitter-like formatting
+                tweet.innerHTML = `
+                    <div style="display: flex; flex-direction: column; width: 100%;">
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: ${profileColor}; margin-right: 10px;"></div>
+                            <div>
+                                <div style="font-weight: bold;">${username}</div>
+                                <div style="color: #657786; font-size: 12px;">${handle}</div>
+                            </div>
+                        </div>
+                        <div>${contentArray[randomIndex]}</div>
+                    </div>
+                `;
+            }
+            
+            // Set random horizontal position
+            const left = (Math.random() * 70) + 7.5; // between 15% and 85% of screen width
+            const rotation = (Math.random() * 6) - 3; // between -3 and 3 degrees
+            
+            // Set initial position at bottom of the screen
+            const height = window.innerHeight;
+            const startPosition = Math.floor(Math.random() * 600) + height; // start between 100% and 150% of viewport height
+            
+            tweet.style.position = 'absolute';
+            tweet.style.left = `${left}%`;
+            tweet.style.top = `${startPosition}px`;
+            tweet.style.setProperty('--rotation', `${rotation}deg`);
+            
+            // Add to container
+            tweetContainer.appendChild(tweet);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                tweet.remove();
+                createTweet(); // Create a new tweet to replace it
+            }, 18000); // Match with animation duration
+        }
+    </script>
+</body>
 </html>
