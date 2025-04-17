@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYT Survey</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tweet-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .tweet {
+            position: absolute;
+            width: 280px;
+            height: auto;
+            min-height: 120px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0.8; /* Fixed opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e1e8ed;
+            padding: 10px;
+            font-size: 14px;
+            text-align: left;
+            color: #292f33;
+            animation-name: floatTweet;
+            animation-duration: 18s; /* Faster animation - 12 seconds instead of 25 */
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+        
+        @keyframes floatTweet {
+            0% {
+                transform: translateY(100px) rotate(var(--rotation));
+                opacity: 0.2;
+            }
+            25% {
+                transform: translateY(-300px) rotate(var(--rotation));
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-700px) rotate(var(--rotation));
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(-1100px) rotate(var(--rotation));
+                opacity: 0.8;
+            }   
+            100% {
+                transform: translateY(-1500px) rotate(var(--rotation));
+                opacity: 0.2;
+            }
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ebebeb;
+            padding-bottom: 15px;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .option-button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+        
+        .woke-button {
+            background-color: #6b5b95;
+            color: white;
+        }
+        
+        .woke-button:hover {
+            background-color: #5a4a84;
+        }
+        
+        .corporate-button {
+            background-color: #d64161;
+            color: white;
+        }
+        
+        .corporate-button:hover {
+            background-color: #c53050;
+        }
+
+        .kevin-button {
+            background-color: #b71fad;
+            color: white;
+        }   
+
+        .kevin-button:hover {
+            background-color: #b71fad;
+        }
+        
+        
+        @media (min-width: 768px) {
+            .button-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tweet-container" id="tweet-container">
+        <!-- Tweet images will be added here dynamically -->
+    </div>
+    
+    <div class="container">
+        <h1>Why are you mad at the New York Times?</h1>
+        <div class="button-container">
+            <button class="option-button woke-button" id="woke-button">Because Woke</button>
+            <button class="option-button corporate-button" id="corporate-button">Because Capitalism</button>
+            <button class="option-button kevin-button" id="kevin-button">Because Kevin Litman-Navarro isn't a columnist</button>
+        </div>
+    </div>
+
+    <script>
+        // Tweet animation background elements defined first
+        // Sample tweet texts criticizing NYT for being too leftist
+        const leftistCritiques = [
+            "NYT pushing their leftist agenda again with today's headline #bias",
+            "When did @nytimes become an activist organization instead of a newspaper?",
+            "Another day, another progressive talking point on the NYT front page",
+            "The amount of woke buzzwords in today's NYT headline is just embarrassing",
+            "Does anyone at the NYT editorial board even talk to conservatives anymore?",
+            "NYT headline might as well say 'we hate traditional values' at this point",
+            "Predictable leftist slant from @nytimes covering the latest policy debate",
+            "Can someone remind NYT that half the country doesn't share their progressive worldview?"
+        ];
+        
+        // Sample tweet texts criticizing NYT for being too conservative
+        const conservativeCritiques = [
+            "NYT headline totally missing the systemic issues as usual #corporatemedia",
+            "Are we surprised @nytimes is catering to their corporate advertisers again?",
+            "Their centrist 'both sides' approach to this headline is harmful, actually",
+            "NYT headline shows they're still protecting the wealthy establishment",
+            "When will the Times stop giving platform to these regressive viewpoints?",
+            "Another day, another NYT headline that ignores marginalized perspectives",
+            "The conservative bias in today's @nytimes coverage is showing",
+            "NYT headline acts like protecting corporate interests is 'neutral journalism'"
+        ];
+        
+        // Your custom tweet screenshot images (add your actual image paths here)
+        const tweetImages = [
+            // Add paths to your actual tweet screenshots here
+            // For example: './images/tweet1.jpg', './images/tweet2.png', etc.
+            // Leave this array empty if you don't have images yet
+            'tweet1.png',
+            'tweet2.png'
+            
+        ];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Immediately create tweets on page load
+            createTweets();
+            
+            // Add event listeners to buttons
+            document.getElementById('woke-button').addEventListener('click', function() {
+                window.location.href = './nytimes_versions/nytimes-far-right-static-v3.html';
+            });
+            
+                document.getElementById('corporate-button').addEventListener('click', function() {
+                    window.location.href = './nytimes_versions/nytimes-far-left-static-v3.html';
+                });
+
+            document.getElementById('kevin-button').addEventListener('click', function() {
+                window.location.href = './nytimes_versions/kevin.html';
+            });
+            
+            // Add some animation to buttons on hover
+            const buttons = document.querySelectorAll('.option-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseout', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+                
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'translateY(1px)';
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+            });
+            
+            // Tweet animation background
+            const tweetContainer = document.getElementById('tweet-container');
+        });
+        
+        // Define tweet creation functions outside of DOMContentLoaded to avoid reference errors
+        function createTweets() {
+            // Create first batch immediately
+            for (let i = 0; i < 12; i++) {
+                createTweet();
+            }
+            
+            // Create second batch after a short delay
+            setTimeout(() => {
+                for (let i = 0; i < 12; i++) {
+                    createTweet();
+                }
+            }, 100);
+        }
+        
+        function createTweet() {
+            const tweetContainer = document.getElementById('tweet-container');
+            // Decide whether to use an image or HTML tweet
+            // If you have images and we randomly select to use one (50% chance by default)
+            const useImage = tweetImages.length > 0 && Math.random() < 0.5;
+            
+            let tweet;
+            
+            if (useImage) {
+                // Create an image tweet
+                tweet = document.createElement('img');
+                tweet.className = 'tweet';
+                
+                // Get random tweet image
+                const randomIndex = Math.floor(Math.random() * tweetImages.length);
+                tweet.src = tweetImages[randomIndex];
+                tweet.alt = "Tweet screenshot";
+            } else {
+                // Create an HTML tweet
+                tweet = document.createElement('div');
+                tweet.className = 'tweet';
+                
+                // Randomly choose between leftist and conservative critiques
+                const useLeftistCritique = Math.random() < 0.5;
+                const contentArray = useLeftistCritique ? leftistCritiques : conservativeCritiques;
+                const randomIndex = Math.floor(Math.random() * contentArray.length);
+                
+                // Generate random user names that sound like Twitter users
+                const firstNames = ["Real", "American", "Truth", "News", "Free", "Liberty", "Patriot", "Progressive", "Liberal", "Conservative"];
+                const lastNames = ["Patriot", "Thinker", "Voice", "Watcher", "Defender", "Resister", "American", "Parent", "Voter", "Citizen"];
+                const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+                const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+                const username = randomFirstName + randomLastName;
+                const handle = "@" + username.toLowerCase() + Math.floor(Math.random() * 1000);
+                
+                // Determine profile color based on political leaning
+                const profileColor = useLeftistCritique ? "#d64161" : "#6b5b95";
+                
+                // Create tweet content with Twitter-like formatting
+                tweet.innerHTML = `
+                    <div style="display: flex; flex-direction: column; width: 100%;">
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: ${profileColor}; margin-right: 10px;"></div>
+                            <div>
+                                <div style="font-weight: bold;">${username}</div>
+                                <div style="color: #657786; font-size: 12px;">${handle}</div>
+                            </div>
+                        </div>
+                        <div>${contentArray[randomIndex]}</div>
+                    </div>
+                `;
+            }
+            
+            // Set random horizontal position
+            const left = (Math.random() * 70) + 7.5; // between 15% and 85% of screen width
+            const rotation = (Math.random() * 6) - 3; // between -3 and 3 degrees
+            
+            // Set initial position at bottom of the screen
+            const height = window.innerHeight;
+            const startPosition = Math.floor(Math.random() * 600) + height; // start between 100% and 150% of viewport height
+            
+            tweet.style.position = 'absolute';
+            tweet.style.left = `${left}%`;
+            tweet.style.top = `${startPosition}px`;
+            tweet.style.setProperty('--rotation', `${rotation}deg`);
+            
+            // Add to container
+            tweetContainer.appendChild(tweet);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                tweet.remove();
+                createTweet(); // Create a new tweet to replace it
+            }, 18000); // Match with animation duration
+        }
+    </script>
+</body>
+</html>
