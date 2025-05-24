@@ -1,430 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flamer - Privacy App in Disguise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #ff416c;
-      --background: #0d0d0d;
-      --text: #f9f9f9;
-      --muted: #cccccc;
-      --card: #1a1a1a;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: linear-gradient(to right, var(--accent), #ff4b2b);
-      color: white;
-      padding: 4rem 2rem 2rem;
-      text-align: left;
-      animation: pulseHeader 6s ease-in-out infinite;
-    }
-
-    @keyframes pulseHeader {
-      0%, 100% { background-position: left; }
-      50% { background-position: right; }
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-top: 3rem;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .container {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    p {
-      font-size: 1.125rem;
-      color: var(--muted);
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li::before {
-      content: "🔥";
-      margin-right: 0.5rem;
-    }
-
-    .features, .pricing, .addons {
-      margin-top: 3rem;
-    }
-
-    .tier {
-      background: var(--card);
-      border: 1px solid #333;
-      padding: 2rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .tier:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(255, 65, 108, 0.3);
-    }
-
-    .premium {
-      border: 2px solid var(--accent);
-      background: rgba(255, 65, 108, 0.1);
-    }
-
-    .specs {
-      background: #111;
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      font-size: 1rem;
-    }
-
-    .badge {
-      background: var(--accent);
-      color: white;
-      padding: 0.3rem 0.6rem;
-      font-size: 0.75rem;
-      border-radius: 0.4rem;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
-
-    .mockups, .demo, .video-demo {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .mockups img {
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 1rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(255, 65, 108, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .mockups img:hover {
-      transform: rotate(-2deg) scale(1.05);
-    }
-
-    audio, video {
-      display: block;
-      margin: 2rem auto;
-      width: 100%;
-      max-width: 600px;
-      border-radius: 1rem;
-      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.875rem;
-      color: var(--muted);
-      padding: 4rem 2rem;
-      background: #111;
-    }
-  .banner {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-  padding: 8rem 2rem 6rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-  background-size: cover;
-  box-shadow: inset 0 0 120px rgba(0,0,0,0.6);
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-  padding: 6rem 2rem 4rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.banner .hero h1 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  background: linear-gradient(to right, #fff, #ffeef3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.banner .hero p {
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: #ffeef3;
-}
-
-.banner .cta {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background: white;
-  color: #ff416c;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 2rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-.banner .cta:hover {
-  background: #ffeef3;
-  color: #ff2a61;
-  box-shadow: 0 6px 20px rgba(255, 65, 108, 0.4);
-}
-
-#pricing {
-  scroll-margin-top: 80px;
-}
-
-.banner {
-  position: relative;
-  animation: bannerGlow 6s ease-in-out infinite alternate;
-}
-
-@keyframes bannerGlow {
-  0% {
-    box-shadow: 0 0 30px rgba(255, 65, 108, 0.4), 0 0 60px rgba(255, 75, 43, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 60px rgba(255, 65, 108, 0.7), 0 0 90px rgba(255, 75, 43, 0.5);
-  }
-}
-
-.slide-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.slide-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.pulse {
-  animation: pulseGlow 1.2s ease-in-out infinite alternate;
-}
-
-@keyframes pulseGlow {
-  from {
-    box-shadow: 0 0 40px rgba(255, 0, 79, 0.6);
-  }
-  to {
-    box-shadow: 0 0 70px rgba(255, 0, 79, 0.9);
-  }
-}
-
-.throb {
-  animation: throbPulse 1.5s infinite ease-in-out alternate;
-}
-
-@keyframes throbPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(255, 65, 108, 0.4);
-  }
-  100% {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 65, 108, 0.8);
-  }
-}
-
-.shake-on-hover {
-  transition: transform 0.1s ease;
-}
-
-.shake-on-hover:hover {
-  animation: shake 0.4s infinite;
-}
-
-@keyframes shake {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  75% { transform: translate(2px, 2px); }
-  100% { transform: translate(-2px, -2px); }
-}
-
-</style>
-<style>
-  [data-parallax] {
-    transform: translateY(0);
-    transition: transform 0.4s ease-out;
-  }
-</style>
-<script>
-  window.addEventListener('scroll', () => {
-    document.querySelectorAll('[data-parallax]').forEach(el => {
-      const offset = window.scrollY / 5;
-      el.style.transform = `translateY(${offset}px)`;
-    });
-
-    document.querySelectorAll('.slide-in').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.slide-in').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
-    });
-  });
-</script>
-</head>
-<body>
-  <section class="banner">
-    <div class="hero" style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <h1>🔥 Launching Flamer</h1>
-      <p>One word. Total transformation. Resistance starts in your pocket. Power rises from the bottom up.</p>
-      <p style="font-style: italic; color: #ffeef3; max-width: 700px;">Flamer is an app that transforms your phone into a decoy environment with one tap, channeling the spirit of the burner phone but taking it to flamboyant new heights. Designed for privacy, control, and misdirection, it helps you present a completely different digital identity when needed.</p>
-      <a href="#pricing" class="cta throb">Download Now</a>
-    </div>
-  </section>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      
+    <!-- Your CSS files -->
+    <link rel="stylesheet" href="style/app.css">
     
-  
-    <div class="container">
-      <section class="features slide-in" style="text-align: center; max-width: 900px; margin: 0 auto; scroll-margin-top: 100px;">
-    <h2>App Features</h2>
-    <ul>
-      <li>Fake contacts, fake messages, real vibes</li>
-      <li>Pre-loaded with tasteful softcore gay media</li>
-      <li>Anonymous browser history: harmless but undeniably queer</li>
-      <li>Looks like your real phone at a glance</li>
-      <li>No connection to your personal accounts</li>
-      <li>Self-destruct mode for maximum drama</li>
-      <li>"Lost Mode" auto-loops moaning audio if triggered</li>
-      <li>Lock screen quotes by Walt Whitman and Freddie Mercury</li>
-      <li>AI-generated sexting bot to fill in fake text threads</li>
-      <li>Random push notifications from fake lovers, exes, or admirers</li>
-      <li><strong>Dick ID</strong> — proprietary biometric scanner that only unlocks for your... unique profile</li>
-    </ul>
-  </section>
-  
-  <section class="how-it-works slide-in" style="text-align: center; max-width: 900px; margin: 0 auto; scroll-margin-top: 100px;">
-    <h2>How Does It Work?</h2>
-    <p style="font-size: 1.1rem; color: var(--muted); max-width: 700px; margin: 2rem auto;">
-      When you install The Flamer, you choose two safewords — one to activate the app, and one to deactivate it. That means you can turn it on or off instantly, in plain sight, with nothing but a whisper. No swiping. No digging through settings. The whole experience is completely lubed up and frictionless.
-    </p>
-  </section>
+    <!-- google fonts: Roboto Condensed(super-font) and Lora(sub-font) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet"> 
+    <link rel="icon" href="style/images/website_icon.ico" sizes="16x16" type="image/ico">
   
       
-  
       
-        <section id="pricing" class="pricing slide-in" style="text-align: center; max-width: 900px; margin: 4rem auto;">
-  <div class="tier">
-          <h3>🌈 Flamer Lite - $99 <span class="badge">Softcore & Sublime</span></h3>
-          <p>Our entry-level burner with nothing to hide — except your real life. Subtly queer, deeply artistic, and convincingly mundane. This is your TSA-safe gay getaway device.</p>
-          <ul>
-            <li>Gallery of tasteful, sun-drenched softcore gay photography</li>
-            <li>Subtle dating app profiles with wholesome convos</li>
-            <li>Browser history of gay blogs, self-help, and indie skincare sites</li>
-            <li>Home screen includes fake astrology app & queer wellness tracker</li>
-            <li>Preloaded queer poetry PDFs and short films</li>
-          </ul>
+    <title>Kevin Litman-Navarro</title>
+
+  </head>
+    
+  <body class="light-theme">
+    <div class="container"><!-- start of the main container-->
+        <div class="row justify-content-center"><!-- headline and intro -->
+            <div class="col-md-10 ">
+                <h1 class="headline super-font">Kevin Litman-Navarro</h1>
+                <!-- put your twitter page here: -->
+                <a class="handle super-font" href="https://twitter.com/kevselfpromotes?lang=en">@kevselfpromotes</a>
+            </div>
         </div>
-  <div class="tier premium">
-          <h3>🔥 Flamer X - $199 <span class="badge">NSFW+</span></h3>
-          <p>The hardcore edition. Not for the faint of groin. Pre-loaded with hundreds of hi-res, aggressively explicit, vein-throbbing gay content. Bravely curated. Shockingly sincere. So graphic it’s practically an anti-theft device.</p>
-          <ul>
-            <li>Auto-scroll erotic art gallery (opt-in)</li>
-            <li>Randomized pornographic notifications (optional)</li>
-            <li>"Dickstorm Mode" — instantly floods recent apps with full-screen, high-contrast imagery</li>
-            <li>Looping video wallpapers: throbbing, dripping, pulsating aesthetics</li>
-            <li>AI-generated erotic stories based on your fake persona</li>
-            <li>"Cumcloud Sync" stores decoys in encrypted cloud storage for resets</li>
-            <li>Faux camera roll with believable timestamps and geographic metadata</li>
-          </ul>
+        <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+            <div class="col-md-10">
+                <p class="section super-font">About me</p>
+                <p class="body-text sub-font">
+                I'm a writer and journalist-engineer at <a href='pudding.cool'>The Pudding</a> and <a href='polygraph.cool'>Polygraph</a>. Check out some of my visual work and writing below, and contact me at kevin.litnav @ gmail.com if you wanna chat.
+                </p>
+            </div>
         </div>
-      </section>
-  <section class="pricing-cont tier premium shake-on-hover" style="background: linear-gradient(to bottom, #ff004f, #8e0032); border: 4px solid #fff; border-radius: 1.5rem; padding: 2rem; margin: 2rem auto; box-shadow: 0 0 40px rgba(255, 0, 79, 0.6); color: white; max-width: 900px; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(255, 65, 108, 0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0 40px rgba(255, 0, 79, 0.6)';">
-          <h3>👑 Flamer: Power Top Edition - $299 <span class="badge">MAX INTENSITY</span></h3>
-          <p>For those who want to dominate digital decoys with swagger. The Power Top tier is unapologetic, unfiltered, and overclocked with features that push the envelope of advanced privacy.</p>
-          <ul>
-            <li><strong>Submission Mode</strong> — phone stays locked until the user whispers a custom safe word</li>
-            <li><strong>Mirror Self Mode</strong> — the front camera uses AI to reimagine your face as a vintage Tom of Finland drawing</li>
-            <li><strong>Alpha Cloud Sync</strong> — backs up all fake data to an encrypted vault called "DaddyBase"</li>
-            <li><strong>Command Line Moans</strong> — custom terminal interface that responds with erotic affirmations</li>
-            <li><strong>Ambient Aura</strong> — device glows slightly pink when held by an insecure straight man</li>
-            <li><strong>Max Volume Unlock</strong> — unlock feature that only works while blasting Donna Summer</li>
-          </ul>
+    </div><!-- container-->
+        
+
+<div class="container"> 
+    
+        <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+            <div class="col-md-10">
+                <p class="section super-font">Selected Data Stories</p>
+            </div>
         </div>
-      <section class="launch slide-in" style="text-align: center; max-width: 900px; margin: 4rem auto; scroll-margin-top: 100px;">
-    <h2>Available Now</h2>
-    <p style="font-size: 1.2rem; color: var(--muted);">Flamer is now available on your favorite app stores. Transform your phone. Protect your privacy. Do it with flair.</p>
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Available_on_the_App_Store_%28black%29_SVG.svg" alt="Download on the App Store" style="height: 60px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 60px;">
-    </div>
-  </section>
+        
+
+        <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://pudding.cool/2019/10/slang/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/ass_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Is "Ass" The Most Complicated Word in English?</p>
+                    <p class="sub-font explanation">A Visual Investigation for <i>The Pudding</i></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+<!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://www.nytimes.com/interactive/2019/06/12/opinion/facebook-google-privacy-policies.html" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/privacy_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">We Read 150 Privacy Policies. They Were An Incomprehensible Disaster</p>
+                    <p class="sub-font explanation">A Visual Op-ed for <i>The New York Times</i></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+    <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="tabs-mockup/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/tabs_mock_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">The Ultimate Ultimate Guitar Story</p>
+                    <p class="sub-font explanation">A story about guitar players and the songs they love</p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+ <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="ufos/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/ufos_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Close-ish Encounters</p>
+                    <p class="sub-font explanation">Thought the word cloud was played out? Think again.</p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+<!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="nba/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/nba_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Keeping The Team Together</p>
+                    <p class="sub-font explanation">A look at how NBA team continuity translates to success</p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+<!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="refugees/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/refugees_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Death After The Mediterranean</p>
+                    <p class="sub-font explanation">An investigation of refugee deaths in Europe</p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+<br><br>
+
+<div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+            <div class="col-md-10">
+                <p class="section super-font">In-progress Projects</p>
+            </div>
+        </div>
+
+<!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="philosophy-mockup/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/philosophy_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">What is Philosophy?</p>
+                    <p class="sub-font explanation">A visual attempt to define the notoriously nebulous discipline</p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
   
-  <section class="addons slide-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
-        <h2>In-App Upgrades</h2>
-        <ul>
-          <li>🧼 Unlockable visual skins and launcher themes</li>
-          <li>💎 Premium icon packs & Easter egg UI animations</li>
-          <li>🎧 Ambient audio options and sassy notification tones</li>
-          <li>🧳 Stealth launcher mode for border crossings</li>
-          <li>🎁 Unlockable alt-personas and fake romantic entanglements</li>
-        </ul>
-      <section class="press slide-in" style="text-align: center; max-width: 900px; margin: 4rem auto; scroll-margin-top: 100px;">
-    <h2>What People Are Saying</h2>
-    <blockquote style="font-style: italic; color: var(--muted); margin: 2rem auto; max-width: 700px;">“Flamer is a genre-defying privacy tool wrapped in sheer brilliance.”<br>— TechCritique Weekly</blockquote>
-    <blockquote style="font-style: italic; color: var(--muted); margin: 2rem auto; max-width: 700px;">“Flamer is a bold and practical evolution in digital privacy—elegant, expressive, and deeply intentional.”<br>— QueerTech Today</blockquote>
-  </section>
-  
-  <section class="presskit slide-in" style="text-align: center; max-width: 900px; margin: 4rem auto;">
-    <h2>Get the Press Kit</h2>
-    <p style="font-size: 1.1rem; color: var(--muted);">Looking to write about Flamer? Download our full press kit with logos, screenshots, and app descriptions.</p>
-    <a href="#" class="throb" style="display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 2rem; font-weight: bold; transition: background 0.3s ease;">Download Press Kit</a>
-  </section>
-  
-  <section class="signup slide-in" style="text-align: center; max-width: 900px; margin: 4rem auto;">
-    <h2>Get Early Access</h2>
-    <p style="font-size: 1.1rem; color: var(--muted);">Join our email list to get updates, sneak peeks, and beta invites to Flamer.</p>
-    <form style="margin-top: 2rem; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-      <input type="email" placeholder="you@example.com" style="padding: 0.75rem; border-radius: 1rem; border: none; width: 250px; max-width: 90%;">
-      <button type="submit" class="throb" style="padding: 0.75rem 1.5rem; background: var(--accent); color: white; border: none; border-radius: 2rem; font-weight: bold; cursor: pointer;">Notify Me</button>
-    </form>
-  </section>
-  
-  <footer>
-        <p><strong>Legal disclaimer:</strong> Flamer is a novelty burner-inspired privacy app for entertainment and personal security. Always comply with local laws. Always be fabulous. Batteries included. Inhibitions not.</p>
-      </footer>
-    </div>
-    </div>
-</body>
+
+<br><br>
+
+<div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+            <div class="col-md-10">
+                <p class="section super-font">Something Interactive</p>
+            </div>
+        </div>
+
+
+<!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="gofundme/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/gofundme_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">3,000 GoFundMe Campaigns, Mapped</p>
+                    <p class="sub-font explanation">Created using Selenium, BeautifulSoup, Pandas/Python, and Leaflet</p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+<br><br>
+
+
+
+<div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+            <div class="col-md-10">
+                <p class="section super-font">Selected Writing</p>
+            </div>
+        </div>
+
+ <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://ideas.ted.com/can-you-teach-a-computer-to-be-funny/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="https://tedideas.files.wordpress.com/2017/11/featured_art_rachel_denti.gif?w=750" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Can You Teach A Computer To Be Funny?</p>
+                    <p class="body-text sub-font"></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+<!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://theoutline.com/post/6584/ani-liu-microbial-self-portrait" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="style/images/microbe_thumbnail.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Portrait of the Artist as a Microbial Growth</p>
+                    <p class="body-text sub-font"></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+ <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://daily.jstor.org/radical-questions-am-i-my-memories/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="https://daily.jstor.org/wp-content/uploads/2017/11/white_bear_1050x700.jpg" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Am I My Memories?</p>
+                    <p class="body-text sub-font"></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+ <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://www.atlasobscura.com/articles/shark-illustrations-aaron-john-gregory" alt="image description" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="https://assets.atlasobscura.com/article_images/45639/image.jpg" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">The Delicate Art of Illustrating Ancient Sharks</p>
+                    <p class="body-text sub-font"></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+ <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="https://daily.jstor.org/wittgenstein-whether-speech-violence/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="https://daily.jstor.org/wp-content/uploads/2017/08/wittgenstein_2.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Can Speech Be Violence?</p>
+                    <p class="body-text sub-font"></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+ <!-- start of story with an image -->
+        <!-- put the link here -->
+        <a class="link" href="http://blog.lareviewofbooks.org/reviews/dont-panic-coping-internet-age-ignorance/" class="teaser-anchor">
+            <div class="row justify-content-center "> 
+                <div class="col-md-4"><!-- image -->
+                    <img class="image " src="http://blog.lareviewofbooks.org/wp-content/uploads/2017/06/hgtg.png" alt="image description">
+                </div>
+                <div class="col-md-6 "><!-- headline/description -->
+                    <p class="subhead super-font">Don't Panic! Coping With The Internet Age Through Ignorance</p>
+                    <p class="body-text sub-font"></p>
+                </div>
+            </div>
+    </a>
+<!-- end of story with an image -->
+
+
+
+
+
+
+</div><!-- end of container with stories-->
+      
+      
+<div class="container">            
+        <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+            <div class="col-md-10">
+                <p class="body-text sub-font">
+                <br><br>
+                If you want to see more clips: my full column at <a href='https://daily.jstor.org/column/radical-questions/'>JSTOR Daily</a>; more articles for <a href='https://www.atlasobscura.com/users/kevinlitmannavarro?view=articles'>Atlas Obscura</a>; all sorts of stories at <a href='https://theoutline.com/contributor/449/kevin-litman-navarro'>The Outline</a>.
+                </p>
+            </div>
+        </div>
+    </div><!-- container-->
+            
+    
+        
+        
+        
+        
+        
+      <!-- end of the main container-->
+   
+        
+
+      
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
 </html>
